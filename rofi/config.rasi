@@ -1,0 +1,12 @@
+configuration {
+    font:				"JetBrains Mono 10";
+    show-icons:				true;
+    icon-theme:				"Arc-X-D";
+    display-drun:			"Apps";
+    drun-display-format:		"{name}";
+    scroll-method:			0;
+    disable-history:			false;
+    sidebar-mode:			false;
+}
+
+@import "~/.config/rofi/cloud.rasi"
