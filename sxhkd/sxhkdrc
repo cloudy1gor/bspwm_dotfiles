@@ -154,10 +154,10 @@ XF86Audio{Raise,Lower}Volume
 # Simple amixer command seems to have problems unmuting device
 
 XF86MonBrightnessDown
-      brightnessctl set 10%-
+      brightnessctl set 5%-
 
 XF86MonBrightnessUp
-      brightnessctl set +10%
+      brightnessctl set +5%
 
 # Screenshot
 Print
@@ -166,6 +166,9 @@ Print
 # Shortcuts
 super + w
   google-chrome-stable
+
+super + v
+  code
 
 super + shift + Return
   thunar

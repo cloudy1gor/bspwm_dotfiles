@@ -22,16 +22,10 @@ bspc config pointer_action3       resize_corner
 
 # Specific settings per app
 bspc rule -r \*:\*
-
-bspc rule -a mplayer2 state=floating
-bspc rule -a Yad state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-
-bspc rule -a Zathura state=tiled follow=on
-bspc rule -a Nitrogen desktop='^5' follow=on
-bspc rule -a musikcube desktop='^0' follow=on
-bspc rule -a TelegramDesktop desktop='^5' follow=on
+bspc rule -a Subl desktop='^1' follow=on
+bspc rule -a MusikCube desktop='^0' follow=on
+bspc rule -a TelegramDesktop desktop='^6' follow=on
+bspc rule -a discord desktop='^6' follow=on
 
 
 # Border
@@ -40,7 +34,7 @@ bspc config normal_border_color         "#ececec"
 bspc config active_border_color         "#000000"
 
 
-# Autostart
+# App settings
 
 # Set display from arandr saved script
 sh ~/.screenlayout/monitor.sh &
@@ -52,7 +46,7 @@ sh ~/.screenlayout/monitor.sh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
 # nitrogen --restore &
-feh --bg-fill $HOME/.config/bspwm/img/4* &
+feh --bg-fill ~/.config/bspwm/img/4* &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 # Picom
@@ -82,3 +76,5 @@ xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enab
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
 
+# Autostart applications
+sh $HOME/.config/bspwm/scripts/autostart.sh

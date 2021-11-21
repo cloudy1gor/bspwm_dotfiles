@@ -1,0 +1,20 @@
+[Added Associations]
+text/plain=visual-studio-code.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-BW53C1.desktop;
+text/x-csrc=visual-studio-code.desktop;
+inode/directory=visual-studio-code.desktop;
+application/x-shellscript=sublime_text.desktop;visual-studio-code.desktop;micro.desktop;
+audio/mpeg=mpv.desktop;userapp-mpd-2CP8C1.desktop;vlc.desktop;musikcube.desktop;
+image/jpeg=sxiv.desktop;
+audio/flac=mpv.desktop;musikcube.desktop;
+application/json=sublime_text.desktop;
+
+[Default Applications]
+x-scheme-handler/tg=userapp-Telegram Desktop-BW53C1.desktop
+audio/mpeg=musikcube.desktop
+audio/flac=musikcube.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
