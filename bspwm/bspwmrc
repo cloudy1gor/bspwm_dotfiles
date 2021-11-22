@@ -46,7 +46,8 @@ sh ~/.screenlayout/monitor.sh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
 # nitrogen --restore &
-feh --bg-fill ~/.config/bspwm/img/4* &
+feh --bg-fill ~/.config/bspwm/img/2.jpg &
+
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 # Picom

@@ -1,5 +1,5 @@
 [Added Associations]
-text/plain=visual-studio-code.desktop;
+text/plain=sublime_text.desktop;visual-studio-code.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-BW53C1.desktop;
 text/x-csrc=visual-studio-code.desktop;
 inode/directory=visual-studio-code.desktop;
@@ -8,6 +8,7 @@ audio/mpeg=mpv.desktop;userapp-mpd-2CP8C1.desktop;vlc.desktop;musikcube.desktop;
 image/jpeg=sxiv.desktop;
 audio/flac=mpv.desktop;musikcube.desktop;
 application/json=sublime_text.desktop;
+application/x-yaml=sublime_text.desktop;
 
 [Default Applications]
 x-scheme-handler/tg=userapp-Telegram Desktop-BW53C1.desktop
