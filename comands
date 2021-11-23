@@ -5,12 +5,16 @@
 
 - sudo pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 
+- sudo pacman -S --needed bluez bluez-utils pulseaudio-bluetooth blueberry
+
 - sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
 - sudo pacman -S --needed git base-devel
 - git clone https://aur.archlinux.org/yay.git
 - cd yay
 - makepkg -si
+
+- sudo yay -S picom-jonaburg-git
 
 - sudo pacman -S --needed base-devel git
 - git clone https://aur.archlinux.org/pikaur.git
@@ -37,7 +41,7 @@
 - cd google-chrome/
 - makepkg -si
 
-- sudo pacman -S telegram-desktop discord flameshot vlc variety firefox-developer-edition unrar unzip transmission-qt copyq
+- sudo pacman -S telegram-desktop discord flameshot vlc variety firefox-developer-edition unrar unzip transmission-qt copyq ncdu
 
 - sudo pacman -S nodejs-lts-fermium npm yarn
 
