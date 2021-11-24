@@ -1,18 +1,13 @@
-[Added Associations]
-text/plain=micro.desktop;visual-studio-code.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-BW53C1.desktop;
-text/x-csrc=micro.desktop;visual-studio-code.desktop;
-audio/mpeg=mpv.desktop;userapp-mpd-2CP8C1.desktop;vlc.desktop;musikcube.desktop;
-image/jpeg=sxiv.desktop;
-audio/flac=mpv.desktop;musikcube.desktop;
 
 [Default Applications]
+application/pdf=org.pwmt.zathura.desktop;
 application/x-yaml=micro.desktop;
 application/vnd.kde.kxmlguirc=micro.desktop;
 application/x-shellscript=micro.desktop;
 inode/directory=visual-studio-code.desktop;
 application/json=micro.desktop;
 text/plain=micro.desktop;
+text/x-csrc=micro.desktop;visual-studio-code.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-BW53C1.desktop
 audio/mpeg=musikcube.desktop
 audio/flac=musikcube.desktop
@@ -21,3 +16,7 @@ x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
+image/gif=mpv.desktop;
+image/jpeg=feh.desktop;
+image/jpg=feh.desktop;
+image/png=feh.desktop;

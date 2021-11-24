@@ -1,9 +1,12 @@
 Xft.dpi: 115
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintfull
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.autohint  : false
+Xft.hintstyle : hintfull
+Xft.lcdfilter : lcddefault
+st.font: 				JetBrainsMono Nerd Font Mono:pixelsize=15
 
 # Xcursor.size: 20
 # Xcursor.theme: capitaine-cursors-light
-st.font: JetBrainsMono Nerd Font Mono :pixelsize=15
+

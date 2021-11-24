@@ -1,8 +1,6 @@
 #!/bin/bash
 
-sh ~/.fehbg
-
-arr=("copyq" "mpd" "flameshot")
+arr=("copyq" "flameshot")
 
 for value in ${arr[@]}
 do

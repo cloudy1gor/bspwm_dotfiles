@@ -5,3 +5,5 @@
 	ui = auto
 [push]
 	default = current
+[core]
+	editor = code

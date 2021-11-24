@@ -41,7 +41,7 @@
 - cd google-chrome/
 - makepkg -si
 
-- sudo pacman -S telegram-desktop discord flameshot vlc variety firefox-developer-edition unrar unzip transmission-qt copyq ncdu
+- sudo pacman -S telegram-desktop discord flameshot vlc variety firefox-developer-edition unrar unzip transmission-qt copyq ncdu spotify-adblock
 
 - sudo pacman -S nodejs-lts-fermium npm yarn
 
