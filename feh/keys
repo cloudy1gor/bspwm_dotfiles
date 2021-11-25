@@ -1,0 +1,43 @@
+# FEH KEYBIND CONFIG
+
+# unbind
+toggle_keep_vp
+save_image
+save_filelist
+reload_plus
+reload_minus
+reload_image
+render
+toggle_filenames
+toggle_fixed_geometry
+jump_random
+
+# menu bindings
+#menu_parent h Left
+#menu_child  l Right
+#menu_down   j Down
+#menu_up     k Up
+#menu_select space Return
+
+# image navigation
+next_img l Right space
+prev_img h Left S-space
+jump_fwd k
+jump_back j
+jump_first g
+jump_last G
+
+# image movement
+scroll_up    K
+scroll_down  J
+scroll_left  L
+scroll_right H
+
+# misc
+toggle_fullscreen f
+zoom_in u equal Up
+zoom_out d minus Down
+zoom_fit c
+zoom_default z
+orient_1 r greater
+orient_3 R less
