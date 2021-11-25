@@ -1,9 +1,39 @@
 [user]
-	name = [cloudy1gor]
-	email = [savelyev7979@gmail.com]
-[color]
-	ui = auto
+	name = cloudy1gor
+	email = savelyev7979@gmail.com
+
 [push]
 	default = current
+	
 [core]
 	editor = code
+
+[help]
+  autocorrect = 1	
+	
+[color]
+	branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+
+[color "branch"]
+  current = green bold
+  local = green
+  remote = yellow
+
+[color "diff"]
+  frag = magenta
+  meta = yellow
+
+  new = green
+  old = red
+
+  newMoved = cyan
+  oldMoved = blue
+
+[color "status"]
+  added = green reverse
+  changed = yellow reverse
+  untracked = red reverse

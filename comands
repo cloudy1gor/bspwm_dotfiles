@@ -21,7 +21,7 @@
 - cd pikaur4
 - makepkg -fsri
 
-- pikaur -S nerd-fonts-noto-sans-regular-complete ttf-unifont ttf-symbola ttf-jetbrains-mono
+- pikaur -S ttf-joypixels noto-fonts noto-fonts-cjk noto-fonts-emoji nerd-fonts-noto-sans-regular-complete ttf-unifont ttf-symbola ttf-jetbrains-mono
 
 - git clone https://aur.archlinux.org/snapd.git
 - cd snapd
