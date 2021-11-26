@@ -1,6 +1,0 @@
-set font "firacode normal 14"
-set default-fg "#dfdfdf"
-set default-bg "#222"
-set statusbar-bg "#dfdfdf"
-set statusbar-fg "#222"
-set selection-clipboard clipboard
