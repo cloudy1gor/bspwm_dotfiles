@@ -15,6 +15,15 @@ alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
 alias g git
+
+alias cd..="cd .."
+alias ..="cd .."
+alias mv="mv -iv"
+alias cp="cp -riv"
+alias mkdir="mkdir -vp"
+alias df="df -h"
+alias rm="rm -ir"
+
 command -qv nvim && alias vim nvim
 
 set -gx EDITOR nvim
