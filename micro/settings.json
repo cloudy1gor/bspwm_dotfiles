@@ -6,5 +6,7 @@
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
     ],
     "pluginrepos": [],
+    "softwrap": true,
+    "wordwrap": true,
     "tabsize": 2
 }
