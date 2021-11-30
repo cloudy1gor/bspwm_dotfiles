@@ -30,7 +30,7 @@
 
 - sudo snap install btop
 
-- sudo pacman -S kitty fish thunar ranger neofetch neovim feh musikcube capitaine-cursors zathura
+- sudo pacman -S kitty fish thunar ranger ueberzug neofetch neovim feh musikcube capitaine-cursors zathura
 - chsh -s /usr/bin/fish
 
 - git clone https://aur.archlinux.org/visual-studio-code-bin.git
