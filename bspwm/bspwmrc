@@ -27,6 +27,7 @@ bspc config pointer_action3       resize_corner
 
 # Specific settings per app
 bspc rule -r \*:\*
+bspc rule -a Plank layer=above manage=on border=off
 bspc rule -a MusikCube desktop='^0' follow=on
 bspc rule -a TelegramDesktop desktop='^6' follow=on
 bspc rule -a discord desktop='^6' follow=on
@@ -48,7 +49,7 @@ sh ~/.screenlayout/monitor.sh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
 # nitrogen --restore &
-feh --bg-fill ~/.config/bspwm/img/9.* &
+feh --bg-fill ~/.config/bspwm/img/14.* &
 
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/
