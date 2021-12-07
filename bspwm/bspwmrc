@@ -56,7 +56,8 @@ sh ~/.screenlayout/monitor.sh &
 
 # Wallpaper
 # nitrogen --restore &
-feh --bg-fill ~/.config/bspwm/img/14.* &
+variety &
+# feh --bg-fill ~/.config/bspwm/img/14.* &
 
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/
