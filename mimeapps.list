@@ -1,5 +1,5 @@
 [Default Applications]
-application/pdf=llpp.desktop;
+application/pdf=org.pwmt.zathura.desktop;
 application/x-yaml=micro.desktop;
 application/vnd.kde.kxmlguirc=micro.desktop;
 application/x-shellscript=micro.desktop;
@@ -19,6 +19,12 @@ image/gif=mpv.desktop;
 image/jpeg=feh.desktop;
 image/jpg=feh.desktop;
 image/png=feh.desktop;
+x-scheme-handler/mailto=google-chrome.desktop
+application/vnd.adobe.flash.movie=mpv.desktop
 
 [Added Associations]
+application/pdf=llpp.desktop;
 audio/mpeg=userapp-cmus-YIKRD1.desktop;userapp-mpd-2CP8C1.desktop;
+application/xml=micro.desktop;
+application/vnd.adobe.flash.movie=mpv.desktop;
+inode/directory=sublime_text.desktop;

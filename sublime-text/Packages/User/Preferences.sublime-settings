@@ -1,0 +1,9 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "ayu-light.sublime-theme",
+	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-ia-light.tmTheme",
+	"font_size": 12,
+}

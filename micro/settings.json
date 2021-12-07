@@ -7,6 +7,6 @@
     ],
     "pluginrepos": [],
     "softwrap": true,
-    "wordwrap": true,
-    "tabsize": 2
+    "tabsize": 2,
+    "wordwrap": true
 }

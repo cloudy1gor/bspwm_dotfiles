@@ -1,0 +1,14 @@
+AlsaOut::AlsaOut() called
+PulseOut::PulseOut() called
+AlsaOut: destructor
+AlsaOut: joining...
+AlsaOut: thread finished
+AlsaOut: closing device...
+AlsaOut: destroyed.
+[2021-12-07 14:08:33] [info] asio async_connect error: system:111 (В соединении отказано)
+[2021-12-07 14:08:33] [info] Error getting remote endpoint: system:107 (Конечная точка передачи не подсоединена)
+[2021-12-07 14:08:33] [error] handle_connect error: Underlying Transport Error
+[mp3float @ 0x7f6c04010500] Could not update timestamps for skipped samples.
+[2021-12-07 14:10:45] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+PulseOut: destroy
+PulseOut: destructor
