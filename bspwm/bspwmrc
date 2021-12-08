@@ -31,9 +31,11 @@ bspc rule -a TelegramDesktop desktop='^6' follow=on
 bspc rule -a discord desktop='^6' follow=on
 bspc rule -a Subl desktop='^7' follow=on
 bspc rule -a MusikCube desktop='^0' follow=on
-bspc rule -a zoom desktop='^5' follow=on focus=on
+bspc rule -a zoom desktop='^5' state=pseudo_tiled follow=on focus=on
+bspc rule -a skypeforlinux desktop='^5' state=pseudo_tiled left=true
 bspc rule -a qBittorrent desktop='^7' state=floating center=true rectangle=1376x625+0+0 focus=on
 bspc rule -a Nitrogen desktop='^1' state=floating center=true rectangle=1376x625+0+0 focus=on
+bspc rule -a Variety desktop='^1' state=floating center=true rectangle=1376x625+0+0 focus=of follow=of hidden=true
 
 # Border
 # bspc config focused_border_color        "#000000"
