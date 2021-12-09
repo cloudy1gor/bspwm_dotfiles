@@ -51,20 +51,17 @@ sh ~/.screenlayout/monitor.sh &
 /usr/bin/dunst &
 
 # Polkit
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Wallpaper
 variety &
 # feh --bg-fill ~/.config/bspwm/img/14.* &
 
 # Dex
-dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+# dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 
 # Picom
 picom -CGb --experimental-backend --config ~/.config/picom.conf &
-
-# Network Applet
-nm-applet --indicator &
 
 # Cursor
 xsetroot -cursor_name left_ptr &

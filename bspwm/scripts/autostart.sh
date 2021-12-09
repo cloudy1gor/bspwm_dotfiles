@@ -1,6 +1,6 @@
 #!/bin/bash
 
-arr=("copyq" "flameshot" "plank")
+arr=("copyq" "flameshot" "plank" "blueberry")
 
 for value in ${arr[@]}
 do
