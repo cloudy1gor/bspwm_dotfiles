@@ -1,0 +1,81 @@
+# available tags:
+# 	<city>
+#   <icon>
+#   <temperature>                   Celsius/Fahrenheit/Kelvin
+#   <temperature_feels_like>        Celsius/Fahrenheit/Kelvin
+#   <temperature_max>               Celsius/Fahrenheit/Kelvin
+#   <temperature_min>               Celsius/Fahrenheit/Kelvin
+#   <dew_point>                     Celsius/Fahrenheit/Kelvin
+#   <precipitation>                 Millimeter/Inch
+#   <precipitation_chance>          Percentage
+#   <clouds>                        Percentage
+#   <humidity>                      Percentage
+#   <visibility>                    Meter/Kilometer/Mile
+#   <wind_speed>                    Ms/Kmh/Mph
+#   <pressure>                      Hpa
+#   <uv_index>                      Integer
+#   <air_quality_index>             Integer
+#   <sunrise>                       H:M
+#   <sunset>                        H:M
+# default: '<icon> <temperature>°C'
+format = '<icon> <temperature>°C'
+# in seconds
+# if a negative interval is specified, wedder exits after printing the weather once
+interval = 300
+
+[units]
+# available units:
+#   Celsius
+#   Fahrenheit
+#   Kelvin
+# default: Celsius
+temperature = 'Celsius'
+# available units:
+#   Ms
+#   Kmh
+#   Mph
+# default: Kmh
+wind_speed = 'Kmh'
+# available units:
+#   Meter
+#   Kilometer
+#   Mile
+# default: Kilometer
+distance = 'Kilometer'
+# available units:
+#   Millimeter
+#   Inch
+# default: Millimeter
+precipitation = 'Millimeter'
+
+[weather]
+# available providers:
+#   OpenWeatherMap
+# default: OpenWeatherMap
+provider = 'OpenWeatherMap'
+# enter your API key here
+api_key = 'd3a17d0b3c41b2d7e84ef56e36ad5cd0'
+
+[location]
+# available providers:
+#   IpApi
+#   Manual
+# default: IpApi
+provider = 'IpApi'
+# if you choose 'Manual' as provider, you can set your coordinates
+lat = 49.9923181
+lon = 36.2310146
+
+# install one of the patched fonts from Nerd Fonts to display the icons:
+# https://github.com/ryanoasis/nerd-fonts#patched-fonts
+[icons]
+# the icons displayed here are also the defaults
+clear_sky = ''
+few_clouds = ''
+clouds = ''
+many_clouds = ''
+rain = ''
+heavy_rain = ''
+thunderstorm = ''
+snow = ''
+mist = ''
