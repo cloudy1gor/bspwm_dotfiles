@@ -1,0 +1,6 @@
+*.pyc
+/package-metadata.json
+.fuse_*
+.idea/
+.cache
+env_py3/

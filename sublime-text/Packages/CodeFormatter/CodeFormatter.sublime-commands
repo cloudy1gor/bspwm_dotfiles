@@ -1,0 +1,70 @@
+[
+	{
+		"caption": "CodeFormatter: Format Code",
+		"command": "code_formatter"
+	},
+        {
+		"caption": "CodeFormatter: Format Open Tabs Code",
+		"command": "code_formatter_open_tabs"
+	},
+        {
+		"caption": "CodeFormatter: Format as PHP Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "php"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as Javascript Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "javascript"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as CSS Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "css"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as SCSS Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "scss"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as HTML Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "html"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as Python Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "python"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as VBScript Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "vbscript"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Show PHP Transformations",
+		"command": "code_formatter_show_php_transformations"
+	},
+	{
+		"caption": "CodeFormatter: Format as Coldfusion Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "coldfusion"
+		}
+	}
+]
