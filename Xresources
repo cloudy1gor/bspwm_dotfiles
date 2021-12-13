@@ -7,6 +7,6 @@ Xft.hintstyle : hintfull
 Xft.lcdfilter : lcddefault
 st.font: 				JetBrainsMono Nerd Font Mono:pixelsize=15
 
-# Xcursor.size: 20
-# Xcursor.theme: capitaine-cursors-light
+Xcursor.size: 20
+Xcursor.theme: capitaine-cursors-light
 

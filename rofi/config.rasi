@@ -1,115 +1,14 @@
 configuration {
-	font:														"JetBrains Mono 10";
+	font:														"JetBrains Mono 12";
 	show-icons:                     true;
-	icon-theme: 										"Arc-X-D";
+	icon-theme: 										"Papirus";
 	display-drun: 									"";
 	drun-display-format:            "{name}";	
 	disable-history:                false;
 	sidebar-mode: 									false;
+	cycle:												  true;
+	threads:											  2;
+	steal-focus:									  true;
 }
 
 @import "~/.config/rofi/cloud.rasi"
-
-* {
-  background:                     #e6e6e6;
-  foreground:                     #000;
-  accent:			    								#24283b;
-}
-
-window {
-  transparency:                   "real";
-  background-color:               @background;
-  text-color:                     @foreground;
-	border:													6px;
-	border-radius: 									10px;
-	width:													50%;
-    location:                       center;
-    x-offset:                       0;
-    y-offset:                       0;
-}
-
-prompt {
-    enabled: 											true;
-	padding: 												0.30% 1% 0% -0.5%;
-	background-color: 							@background;
-	text-color: 										@foreground;
-	font:														"JetBrains Mono 24";
-}
-
-entry {
-    background-color:               @background;
-    text-color:                     @foreground;
-    placeholder-color:              @foreground;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Apps";
-    padding:                        0.10% 0% 0% 0%;
-    blink:                          true;
-    font:														"JetBrains Mono 20";
-}
-
-inputbar {
-	children: 													[ prompt, entry ];
-    background-color:               @background;
-    text-color:                     @foreground;
-    expand:                         false;
-	border:															0% 0% 0% 0%;
-    border-radius:                  12px;
-	border-color:											@accent;
-    margin:                         0% 0% 0% 0%;
-    padding:                        1.5%;
-}
-
-listview {
-    background-color:               @background;
-    columns:                        4;
-    lines:                          3;
-    spacing:                        0%;
-    cycle:                          false;
-    dynamic:                        true;
-    layout:                         vertical;
-}
-
-mainbox {
-    background-color:              @background;
-	border:														0% 0% 0% 0%;
-    border-radius:                  0% 0% 0% 0%;
-	border-color:										@background;
-    children:                       [ inputbar, listview ];
-    spacing:                       	2%;
-    padding:                        2% 1% 2% 1%;
-}
-
-element {
-    text-color:                     @foreground;
-    background-color:	 							@background;
-    orientation:                    vertical;
-    border-radius:                  0%;
-    padding:                        2% 0% 2% 0%;
-}
-
-element-icon {
-    text-color:       							inherit;
-    background-color:								inherit;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    size:                           64px;
-    border:                         0px;
-}
-
-element-text {
-    text-color:       							inherit;
-    background-color: 		    			inherit;
-    expand:                         true;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    margin:                         0.5% 0.5% -0.5% 0.5%;
-}
-
-element selected {
-    background-color:               @accent;
-    text-color:                     @foreground;
-    border:													4px;
-    border-radius:                  9px;
-    border-color:                  	@accent;
-}

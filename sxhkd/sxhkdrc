@@ -13,7 +13,7 @@ super + d
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # show open window
-super + ctrl + d
+super + tab
 	rofi -modi drun -show window -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
@@ -148,7 +148,7 @@ XF86AudioMute
   amixer -D pulse sset Master toggle-mute
 
 XF86Audio{Raise,Lower}Volume
- amixer -D pulse sset Master {1%+,1%-} unmute
+ amixer -D pulse sset Master {5%+,5%-} unmute
 
 # amixer -q set Master toggle
 # Simple amixer command seems to have problems unmuting device
@@ -161,7 +161,7 @@ XF86MonBrightnessUp
 
 # Screenshot
 Print
-  flameshot
+  flameshot gui
 
 # Shortcuts
 super + w

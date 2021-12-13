@@ -39,7 +39,7 @@
     normal-foreground:           var(foreground);
     alternate-urgent-foreground: var(red);
     selected-normal-background:  var(lightbg);
-    font:                        "DejaVu Sans 12";
+    font:                        "DejaVu Sans 15";
     blackText:			 rgba(0, 0, 0, 100 %);
 }
 window {
@@ -61,7 +61,7 @@ message {
     border-color: var(separatorcolor);
     border:       2px dash 0px 0px ;
     width:        30%;
-    font:         "monospace bold 10";
+    font:         "monospace bold 12";
 }
 textbox {
     text-color: var(foreground);
@@ -157,7 +157,7 @@ prompt {
 textbox-prompt-colon {
     margin:     0px 0.3000em 0.0000em 0.0000em ;
     expand:     false;
-    str:        " > ";
+    str:        "  ";
     text-color: inherit;
 }
 error-message {

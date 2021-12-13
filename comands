@@ -41,7 +41,7 @@
 - cd google-chrome/
 - makepkg -si
 
-- sudo pacman -S telegram-desktop llpp discord flameshot mpv variety transmission-qt copyq ncdu
+- sudo pacman -S telegram-desktop llpp discord flameshot mpv transmission-qt copyq ncdu
 
 - sudo pacman -S nodejs-lts-fermium npm yarn
 

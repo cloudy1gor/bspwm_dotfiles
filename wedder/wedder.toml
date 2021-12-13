@@ -21,7 +21,7 @@
 format = '<icon> <temperature>°C'
 # in seconds
 # if a negative interval is specified, wedder exits after printing the weather once
-interval = 300
+interval = 7200000
 
 [units]
 # available units:
