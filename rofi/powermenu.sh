@@ -1,45 +1,59 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
-# Options for powermenu
-lock="    Lock"
-logout="    Logout"
-shutdown="    Shutdown"
-reboot="    Reboot"
-sleep="   Sleep"
+## Author  : Aditya Shakya
+## Mail    : adi1090x@gmail.com
+## Github  : @adi1090x
+## Twitter : @adi1090x
 
-# Get answer from user via rofi
-selected_option=$(echo "$lock
-$logout
-$sleep
-$reboot
-$shutdown" | rofi -dmenu\
-                  -i\
-                  -p "Power"\
-                  -config "~/.config/rofi/powermenu.rasi"\
-                  -font "Symbols Nerd Font 12"\
-                  -width "15"\
-                  -lines 5\
-                  -line-margin 3\
-                  -line-padding 10\
-                  -scrollbar-width "0" )
+dir="$HOME/.config/rofi/"
+rofi_command="rofi -theme $dir/powermenu.rasi"
 
-# Do something based on selected option
-if [ "$selected_option" == "$lock" ]
-then
+uptime=$(uptime -p | sed -e 's/up //g')
+
+# Options
+shutdown=""
+reboot=""
+lock=""
+suspend=""
+logout="<"
+
+# Variable passed to rofi
+options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
+
+chosen="$(echo -e "$options" | $rofi_command -p "$uptime" -dmenu -selected-row 0)"
+case $chosen in
+$shutdown)
+  systemctl poweroff
+  ;;
+$reboot)
+  systemctl reboot
+  ;;
+$lock)
+  if [[ -f /usr/bin/i3lock ]]; then
     /home/$USER/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh
-elif [ "$selected_option" == "$logout" ]
-then
-    bspc quit
-elif [ "$selected_option" == "$shutdown" ]
-then
-    systemctl poweroff
-elif [ "$selected_option" == "$reboot" ]
-then
-    systemctl reboot
-elif [ "$selected_option" == "$sleep" ]
-then
+  elif [[ -f /usr/bin/betterlockscreen ]]; then
+    betterlockscreen -l
+  fi
+  ;;
+$suspend)
+  ans=$(confirm_exit &)
+  if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
+    mpc -q pause
     amixer set Master mute
     systemctl suspend
-else
-    echo "No match"
-fi
+  elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
+    exit 0
+  else
+    msg
+  fi
+  ;;
+$logout)
+  if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
+    openbox --exit
+  elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
+    bspc quit
+  elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
+    i3-msg exit
+  fi
+  ;;
+esac

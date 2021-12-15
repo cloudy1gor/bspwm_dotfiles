@@ -17,14 +17,14 @@
     separatorcolor:              var(foreground);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
-    lightbg:                     rgba ( 176, 215, 255, 100 % );
+    lightbg:                     rgba(108, 122, 137, 100 %);
     spacing:                     2;
     border-color:                var(lightfg);
     normal-background:           var(background);
     background-color:            rgba ( 255, 255, 255, 100 % );
     alternate-active-background: var(darkerBlue);
     active-foreground:           var(lightfg);
-    blue:                        rgba ( 173, 172, 181, 100 % );
+    gray:                        rgba(108, 122, 137, 100 %);
     urgent-background:           var(background);
     alternate-normal-foreground: var(foreground);
     selected-active-background:  var(darkerBlue);
@@ -90,19 +90,20 @@ element normal.urgent {
     text-color:       var(urgent-foreground);
 }
 element normal.active {
-    background-color: var(active-background);
+    background-color: var(gray);
     text-color:       var(active-foreground);
 }
 element selected.normal {
     background-color: var(selected-normal-background);
-    text-color:       var(selected-normal-foreground);
+    text-color:       #ffffff;
+    border-radius:    8px;
 }
 element selected.urgent {
     background-color: var(selected-urgent-background);
     text-color:       var(selected-urgent-foreground);
 }
 element selected.active {
-    background-color: var(selected-active-background);
+    background-color: var(gray);
     text-color:       var(selected-active-foreground);
 }
 element alternate.normal {
