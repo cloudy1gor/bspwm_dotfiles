@@ -38,7 +38,9 @@
   added = green reverse
   changed = yellow reverse
   untracked = red reverse
+  
 [hub]
   protocol = https
+  
 [github]
 	user = cloudy1gor

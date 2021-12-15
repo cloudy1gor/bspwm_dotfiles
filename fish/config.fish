@@ -1,11 +1,5 @@
 set fish_greeting ""
 
-set -x LESSHISTFILE -
-set -x LS_COLORS "*.jpeg=35:*.jpg=35:*.png=35:*.md=90:*.pdf=32:*.gif=35:*.tgz=31:*.mp3=92:*.tar.gz=31:*.zip=31:*.tex=95"
-set -x XDG_CONFIG_HOME "$HOME/.config"
-
-set -gx TERM xterm-256color
-
 # theme
 set -g theme_color_scheme terminal-light
 set -g fish_prompt_pwd_dir_length 1
@@ -19,29 +13,40 @@ set -g theme_nerd_fonts no
 set -g theme_powerline_fonts yes
 set -g fish_prompt_pwd_dir_length 0
 
-# aliases
+# aliases"
 alias ls "ls --color=auto -p -G"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
 alias g git
 
-alias cd..="cd .."
-alias ..="cd .."
 alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 alias df="df -h"
 alias rm="rm -ir"
 alias c="clear"
+alias cd..="cd .."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+alias :q='exit'
 
-command -qv nvim && alias vim nvim
-
+#color scheme
+set -U fish_color_param green
+set -U fish_color_command brblue
+set -U fish_color_operator green
+set -U SPACEFISH_DIR_COLOR green
 set -gx EDITOR nvim
+set -x TERM xterm-256color
 
+# PATH
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
+set -gx PATH ~/.bin $PATH
 
 set FZF_DEFAULT_COMMAND "fd --type file --ignore-case --hidden --follow --exclude .git"
 set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
@@ -55,6 +60,10 @@ set -x -g PIPENV_TIMEOUT 3600
 
 # NodeJS
 set -gx PATH node_modules/.bin $PATH
+
+# Go
+set -g GOPATH $HOME/go
+set -gx PATH $GOPATH/bin $PATH
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
