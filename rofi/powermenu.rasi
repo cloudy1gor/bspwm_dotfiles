@@ -14,7 +14,7 @@ configuration {
 window {
     transparency:                   "real";
     border-radius:                  10px;
-    width:                          100px;
+    width:                          120px;
     location:                       east;
     x-offset:                       -5px;
     y-offset:                       0px;
@@ -44,7 +44,7 @@ element {
 element-text {
     background-color: 				inherit;
     text-color:       				inherit;
-	font:							"feather 20";
+	font:							"Iosevka Term 32";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;

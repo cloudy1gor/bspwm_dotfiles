@@ -3,12 +3,7 @@
 # xrdb ~/.Xresources
 
 # kill programs
-killall -q dunst
-killall -q picom
-killall -q sxhkd
-killall -q polybar
-killall -q xsetroot
-killall -q nm-applet
+killall -q dunst picom sxhkd polybar xsetroot nm-applet
 
 while pfrep -u $UID -x dunst >/dev/null; do sleep 1; done
 while pfrep -u $UID -x picom >/dev/null; do sleep 1; done
