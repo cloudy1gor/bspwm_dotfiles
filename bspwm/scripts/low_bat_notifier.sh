@@ -53,7 +53,7 @@ then
 
         if [[ $bat_percent -lt $LOW_BAT && "$bs" = "Discharging" ]]
         then
-            notify-send --urgency=critical "$bat_percent% : Low Battery!"
+            notify-send --urgency=critical "$bat_percent% : Low Battery!" -i "~/.config/dunst/icons/skull.svg"
         fi
         sleep $POLL_INTERVAL
     done
