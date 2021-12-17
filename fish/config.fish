@@ -40,7 +40,7 @@ set -U fish_color_command brblue
 set -U fish_color_operator green
 set -U SPACEFISH_DIR_COLOR green
 set -gx EDITOR nvim
-set -x TERM xterm-256color
+set TERM "kitty"
 
 # PATH
 set -gx PATH bin $PATH
@@ -48,12 +48,9 @@ set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH ~/.bin $PATH
 
-set FZF_DEFAULT_COMMAND "fd --type file --ignore-case --hidden --follow --exclude .git"
+set -x FZF_DEFAULT_OPTS '-e --prompt="הּ " --preview "bat --color=always {1} --theme=ansi" --layout=reverse --height=50% --info=inline --border --margin=1 --padding=1'
 set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 set FZF_ALT_C_COMMAND "fd --ignore-case --hidden -t d"
-set FZF_TMUX 1
-
-set TERM "kitty"
 
 set -x -g PIPENV_VENV_IN_PROJECT 1
 set -x -g PIPENV_TIMEOUT 3600
