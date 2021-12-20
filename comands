@@ -9,37 +9,20 @@
 
 - sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
-- sudo pacman -S --needed git base-devel
-- git clone https://aur.archlinux.org/yay.git
-- cd yay
-- makepkg -si
-
-- sudo yay -S picom-jonaburg-git redshift-minimal
-
 - sudo pacman -S --needed base-devel git
 - git clone https://aur.archlinux.org/pikaur.git
 - cd pikaur4
 - makepkg -fsri
 
-- pikaur -S ttf-joypixels noto-fonts noto-fonts-cjk noto-fonts-emoji nerd-fonts-noto-sans-regular-complete ttf-unifont ttf-symbola ttf-jetbrains-mono
-
-- git clone https://aur.archlinux.org/snapd.git
-- cd snapd
-- makepkg -si
+- pikaur -S picom-jonaburg-git redshift-minimal snapd visual-studio-code-bin google-chrome
 - sudo systemctl enable --now snapd.socket
+
+- pikaur -S ttf-joypixels noto-fonts noto-fonts-cjk noto-fonts-emoji nerd-fonts-noto-sans-regular-complete ttf-unifont ttf-symbola ttf-jetbrains-mono
 
 - sudo snap install btop
 
 - sudo pacman -S kitty fish thunar ranger ueberzug neofetch neovim feh musikcube capitaine-cursors zathura
 - chsh -s /usr/bin/fish
-
-- git clone https://aur.archlinux.org/visual-studio-code-bin.git
-- cd visual-studio-code-bin/
-- makepkg -si
-
-- git clone https://aur.archlinux.org/google-chrome.git
-- cd google-chrome/
-- makepkg -si
 
 - sudo pacman -S telegram-desktop llpp discord flameshot mpv transmission-qt copyq ncdu
 

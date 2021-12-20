@@ -202,7 +202,7 @@ function send_msg {
         osascript -e "tell app \"System Events\" to display dialog \"${1}\"" &> /dev/null
     elif command -v notify-send &> /dev/null; then
         notify-send Pomodoro "${1}"
-        ~/.scripts/notification_sound_pomo_work.sh
+        notify-send -a Notification -u low "Pomo!" -i "~/.config/dunst/icons/poketball.svg"
     else
         echo "${1}"
     fi

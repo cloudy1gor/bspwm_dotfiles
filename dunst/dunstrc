@@ -21,7 +21,7 @@
 	separator_color = frame
 	sort = yes
 	idle_threshold = 120
-	font = Liga SFMono Nerd Font Bold 10 
+	font = Liga SFMono Nerd Font Bold 12 
 	line_height = 4
 	markup = full
 	format = "%a\n%s\n%b"
@@ -30,12 +30,12 @@
 	word_wrap = yes
 	ignore_newline = no
 	stack_duplicates = true
-	hide_duplicate_count = false
+	hide_duplicate_count = true
 	show_indicators = yes
 	icon_position = left
 	show_icons = left
 	max_icon_size = 64
-	icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps/
+	icon_path = /usr/share/icons/Papirus/32x32/status/:/usr/share/icons/Papirus/32x32/devices/:/usr/share/icons/Papirus/32x32/apps/
 	sticky_history = yes
 	history_length = 20
 	dmenu = /usr/bin/dmenu -p dunst:

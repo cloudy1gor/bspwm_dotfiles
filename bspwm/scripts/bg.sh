@@ -1,7 +1,7 @@
 #/bin/bash
 
 while true; do
-        rm /home/clo/.fehbg
+        rm -ir /home/clo/.fehbg
         feh --randomize --bg-fill ~/Изображения/*
-        sleep 3000
+        sleep 300
 done

@@ -9,7 +9,6 @@ set -g theme_hostname always
 set -g theme_display_vi no
 set -g theme_display_date no
 set -g theme_nerd_fonts no
-
 set -g theme_powerline_fonts yes
 set -g fish_prompt_pwd_dir_length 0
 
@@ -51,6 +50,8 @@ set -gx PATH ~/.bin $PATH
 set -x FZF_DEFAULT_OPTS '-e --prompt="הּ " --preview "bat --color=always {1} --theme=ansi" --layout=reverse --height=50% --info=inline --border --margin=1 --padding=1'
 set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 set FZF_ALT_C_COMMAND "fd --ignore-case --hidden -t d"
+
+set SPACEFISH_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 
 set -x -g PIPENV_VENV_IN_PROJECT 1
 set -x -g PIPENV_TIMEOUT 3600

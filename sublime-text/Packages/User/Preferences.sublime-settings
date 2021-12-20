@@ -5,5 +5,13 @@
 	],
 	"theme": "ayu-light.sublime-theme",
 	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-ia-light.tmTheme",
+	"font_face": "JetBrainsMono-Medium",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
 	"font_size": 12,
+	"translate_tabs_to_spaces": true,
+	"word_wrap": true,
+	"caret_style": "phase",
 }

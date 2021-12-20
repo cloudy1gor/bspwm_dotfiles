@@ -18,7 +18,7 @@
 #   <sunrise>                       H:M
 #   <sunset>                        H:M
 # default: '<icon> <temperature>°C'
-format = '<icon> <temperature>°C'
+format = '<icon> <temperature>°'
 # in seconds
 # if a negative interval is specified, wedder exits after printing the weather once
 interval = 7200000

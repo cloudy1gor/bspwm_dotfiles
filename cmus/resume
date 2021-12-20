@@ -1,7 +1,7 @@
 status playing
-file /home/clo/Музыка/03 - Little One.flac
-position 9
-lib_file /home/clo/Музыка/Animal ДжаZ — Любовь.mp3
+file /home/clo/Музыка/30_seconds_to_mars_edge_of_the_earth_(NaitiMP3.ru).mp3
+position 135
+lib_file /home/clo/Музыка/30_seconds_to_mars_edge_of_the_earth_(NaitiMP3.ru).mp3
 view browser
 browser-dir /home/clo/Музыка
 marked-pl default

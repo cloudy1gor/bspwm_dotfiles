@@ -1,8 +1,7 @@
 [Configuration]
-BackgroundDarkness=0,9
+BackgroundDarkness=0,900000
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
-BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
@@ -38,8 +37,8 @@ ColorCursorUseDefault=FALSE
 ColorBold=#7fbaff
 ColorBoldIsBright=FALSE
 TabActivityColor=#47B35D
-
 ColorForeground=#000000
 ColorBackground=#f7f7f7
 ColorCursor=#007acc
 ColorPalette=#000000;#aa3731;#448c27;#cb9000;#325cc0;#7a3e9d;#0083b2;#f7f7f7;#777777;#f05050;#60cb00;#ffbc5d;#007acc;#e64ce6;#00aacb;#f7f7f7
+

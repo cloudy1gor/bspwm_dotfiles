@@ -42,6 +42,7 @@ bspc rule -a figma-linux desktop='^9'
 bspc rule -a zoom desktop='^5' state=pseudo_tiled follow=on focus=on
 bspc rule -a Skype desktop='^5' state=pseudo_tiled left=true
 bspc rule -a Vivaldi-stable desktop ^4 follow=on
+# bspc rule -a qutebrowser desktop='^2'
 bspc rule -a qBittorrent desktop='^7' state=floating center=true rectangle=1376x625+0+0 focus=on
 bspc rule -a Nitrogen desktop='^1' state=floating center=true rectangle=1376x625+0+0 focus=on
 bspc rule -a Variety desktop='^1' state=floating center=true rectangle=1376x625+0+0 focus=of follow=of
@@ -77,7 +78,7 @@ xsetroot -cursor_name left_ptr &
 # Yellow colors
 redshift -x && redshift -O 5500k &
 
-# Hides mouse when typing
+# Hide mouse when typing
 xbanish &
 
 # Keyboard
