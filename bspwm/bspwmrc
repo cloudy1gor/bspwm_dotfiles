@@ -67,7 +67,7 @@ bspc config active_border_color         "#000000"
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Wallpaper
-sh ~/.config/bspwm/scripts/bg.sh &
+sh ~/.config/bspwm/scripts/styli.sh -d ~/Изображения &
 
 # Picom
 picom -CGb --experimental-backend --config ~/.config/picom.conf &
