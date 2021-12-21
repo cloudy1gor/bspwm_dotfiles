@@ -1,1 +1,1 @@
-~/.local/share/
+~/.local/share/plank/themes/
