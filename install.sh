@@ -71,6 +71,7 @@ for PKG in "${PKGS[@]}"; do
   sudo pacman -S "$PKG" --noconfirm --needed
 done
 
+sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
 chsh -s /usr/bin/fish
@@ -95,6 +96,7 @@ PKGSP=(
 	'librewolf-bin'
 	'timeshift'
 	'wedder'
+	'espanso-bin'
   'picom-jonaburg-git'
   'redshift-minimal'
   'snapd'
@@ -116,6 +118,6 @@ done
 sudo systemctl enable --now snapd.socket
 sudo snap install btop
 
-sudo pacman -R firefox xed meld
+sudo pacman -Rs firefox xed meld dex
 
 cp -r .config .local ~/

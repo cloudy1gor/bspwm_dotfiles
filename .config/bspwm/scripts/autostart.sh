@@ -1,15 +1,9 @@
 #!/bin/bash
-killall -q copyq flameshot plank
+killall -q copyq flameshot plank espanso
 
-arr=("copyq" "flameshot" "plank")
+plank &
+sleep 1 && flameshot &
+sleep 2 && copyq &    
+sleep 3 && espanso &
+sleep 3 && telegram-desktop -startintray &
 
-    for value in ${arr[@]}
-    do
-    isExist=`ps -ef | grep "$value" | grep -v grep | wc -l`
-    if [ $isExist == 0 ]
-    then
-    exec "$value" &
-    fi
-    done
-
-    

@@ -34,10 +34,11 @@ bspc rule -r \*:\*
 bspc rule -a Plank layer=above manage=on border=off focus=off
 bscp node -f {west,south,north,east,next,prev}
 bspc rule -a copyq state=floating center=true focus=on
+bspc rule -a discord desktop='^6' follow=on focus=on
 
-declare -a code=(TelegramDesktop discord)
+declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^6' follow=on focus=on; done
+   bspc rule -a $i desktop='^6' state=floating right=true rectangle=576x825+20+160 follow=off focus=off; done
 
 declare -a code=(Subl Geany qBittorrent)
 for i in ${code[@]}; do
@@ -49,7 +50,7 @@ for i in ${code[@]}; do
 
 declare -a code=(zoom Skype)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^5' state=pseudo_tiled follow=on focus=on; done
+   bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
 
 declare -a code=(Vivaldi-stable librewolf KeePassXC)
 for i in ${code[@]}; do
