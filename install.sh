@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 sudo clear
 sudo pacman -Syyuu
@@ -12,10 +12,12 @@ PKGS=(
   'git'
   'curl'
   'wget'
+  'yad'
   'bluez'
   'bluez-utils'
   'pulseaudio-bluetooth'
   'blueberry'
+  'brightnessctl'
   'feh'
   'timeshift'
   'micro'
@@ -29,7 +31,6 @@ PKGS=(
   'unrar'
   'unzip'
   'llpp'
-  'wedder'
   'capitaine-cursors'
   'zip'
   'fish'
@@ -43,17 +44,15 @@ PKGS=(
   'kitty'
   'telegram-desktop'
   'llpp'
-  'qbittorrent-nox'
   'copyq'
   'ncdu'
   'cmus'
   'flameshot'
   'mpv'
-  'zoom'
-  'sublime-text-4'
   'obs-studio'
   'plank'
   'neovim'
+  'qbittorrent'
 
   'lib32-mesa'
   'vulkan-radeon'
@@ -72,7 +71,14 @@ for PKG in "${PKGS[@]}"; do
   sudo pacman -S "$PKG" --noconfirm --needed
 done
 
+sudo systemctl start bluetooth
+
 chsh -s /usr/bin/fish
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+fisher install IlanCosman/tide@v5
+fisher install matchai/spacefish
+fisher install jethrokuan/z
 
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 
@@ -86,12 +92,17 @@ cd pikaur
 makepkg -fsri
 
 PKGSP=(
+	'librewolf-bin'
+	'timeshift'
+	'wedder'
   'picom-jonaburg-git'
   'redshift-minimal'
   'snapd'
   'visual-studio-code-bin'
+	'sublime-text-4'
   'google-chrome'
   'keepassxc-git'
+  'zoom'
   'ttf-jetbrains-mono'
   'ttf-joypixels'
   'nerd-fonts-noto-sans-regular-complete'
@@ -99,12 +110,12 @@ PKGSP=(
 
 for PKG in "${PKGSP[@]}"; do
   echo "Installing: ${PKG}"
-  sudo pikaur -S "$PKG" --noconfirm --needed
+  sudo pikaur -S "$PKG" --noedit --nodiff
 done
 
 sudo systemctl enable --now snapd.socket
 sudo snap install btop
 
-sudo pacman -R firefox
+sudo pacman -R firefox xed meld
 
 cp -r .config .local ~/

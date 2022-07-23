@@ -1,0 +1,118 @@
+configuration {
+    font:                           "JetBrains Mono 12";
+    show-icons:                     false;
+    display-window: 				"Windows :";
+    window-format: 					"{w}  ·  {c}  ·  {t}";
+    disable-history:                false;
+  	click-to-exit: 					true;
+}
+
+@import "colors.rasi"
+
+* {
+    background-color:               @bg;
+    text-color:                     @fg2;
+}
+
+window {
+    transparency:                   "real";
+    border:                  		1px;
+    border-color:                  	@selected;
+    border-radius:                  10px;
+    width:                          600px;
+    location:                       center;
+    anchor:                         center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    enabled: 						true;
+	margin: 						0px 0px 0px 8px;
+    padding:    					6px 0px 6px 0px;
+    border:                  		0px 0px 1px 0px;
+    border-color:                  	@selected;
+    border-radius:                  0px;
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							"";
+    border-radius:                  0px;
+    text-color:                     #ececec;
+    padding:    					0px 10px 0px 10px;
+	font:							"Iosevka Nerd Font 30";
+}
+
+entry {
+    border:                  		0px 0px 1px 0px;
+    border-radius:                  0px;
+    placeholder:                    "Find...";
+    expand:                         true;
+    horizontal-align:               0;
+    blink:                          true;
+    padding:                        6px;
+}
+
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt, entry ];
+    spacing:                        0;
+    expand:                         false;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+case-indicator {
+    spacing:                        0;
+}
+
+
+listview {
+    background-color:               @bg;
+    columns:                        1;
+    lines:							7;
+    spacing:                        5px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    children:                       [ inputbar, listview ];
+    spacing:                       	10px;
+    padding:                        10px;
+}
+
+element {
+    orientation:                    horizontal;
+    border-radius:                  0px;
+    padding:                        5px;
+}
+
+element-icon {
+    background-color: 				inherit;
+    text-color:       				inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           0px;
+    border:                         0px;
+}
+
+element-text {
+    background-color: 				inherit;
+    text-color:       				inherit;
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0;
+    margin:                         2px 0px 2px 2px;
+}
+
+element selected {
+    background-color:               @fg2;
+    text-color:                     @bg;
+    border:                  		0px;
+    border-radius:                  0px;
+    border-color:                  	@fg2;
+}
+

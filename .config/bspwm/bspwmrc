@@ -1,88 +1,119 @@
 #! /bin/sh
 
-# xrdb ~/.Xresources
-
-# kill programs
-killall -q dunst picom sxhkd polybar xsetroot nm-applet
-
-while pfrep -u $UID -x dunst >/dev/null; do sleep 1; done
-while pfrep -u $UID -x picom >/dev/null; do sleep 1; done
-while pfrep -u $UID -x sxhkd >/dev/null; do sleep 1; done
-while pfrep -u $UID -x fehbg >/dev/null; do sleep 1; done
-while pfrep -u $UID -x polybar >/dev/null; do sleep 1; done
-while pfrep -u $UID -x xsetroot >/dev/null; do sleep 1; done
-while pfrep -u $UID -x nm-applet >/dev/null; do sleep 1; done
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+# bspc monitor -d I II III IV V VI VII VIII IX X
+workspaces() {
+	name=1
+	for monitor in `bspc query -M`; do
+		bspc monitor ${monitor} -n "$name" -d I II III IV V VI VII VIII IX X
+		# bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' ''
+		let name++
+	done
+}
+workspaces
 
-bspc config border_width          		0
-bspc config window_gap			  		8
-bspc config split_ratio           		0.52
-bspc config borderless_monocle    		true
-bspc config gapless_monocle       		true
-bspc config paddingless_monocle   		true
-bspc config pointer_follows_focus 		true
-bspc config focus_follows_pointer 		true
+bspc config border_width               4
+bspc config window_gap                 6
+
+bspc config split_ratio                0.52
+bspc config borderless_monocle         true
+bspc config paddingless_monocle 	      true
+bspc config gapless_monocle            true
+bspc config single_monocle             false
+bspc config pointer_follows_focus      true
+bspc config focus_follows_pointer      true
 bspc config swallow_first_click   		true
-bspc config pointer_modifier      		mod1
+bspc config pointer_modifier      		mod4
 bspc config pointer_action1       		move
 bspc config pointer_action2       		resize_side
 bspc config pointer_action3       		resize_corner
 
 # Specific settings per app
 bspc rule -r \*:\*
-bspc rule -a Plank layer=above manage=on border=off
+bspc rule -a Plank layer=above manage=on border=off focus=off
 bscp node -f {west,south,north,east,next,prev}
-bspc rule -a TelegramDesktop desktop='^6' follow=on
-bspc rule -a discord desktop='^6' follow=on
-bspc rule -a Subl desktop='^7' follow=on
-bspc rule -a figma-linux desktop='^9'
-bspc rule -a zoom desktop='^5' state=pseudo_tiled follow=on focus=on
-bspc rule -a Skype desktop='^5' state=pseudo_tiled left=true
-bspc rule -a Vivaldi-stable desktop ^4 follow=on
-# bspc rule -a qutebrowser desktop='^2'
-bspc rule -a qBittorrent desktop='^7' state=floating center=true rectangle=1376x625+0+0 focus=on
-bspc rule -a Nitrogen desktop='^1' state=floating center=true rectangle=1376x625+0+0 focus=on
-bspc rule -a Variety desktop='^1' state=floating center=true rectangle=1376x625+0+0 focus=of follow=of
-bspc rule -a Timeshift-gtk desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on
 bspc rule -a copyq state=floating center=true focus=on
-bspc rule -a Blueberry.py desktop='^1' state=floating center=true rectangle=725x525+0+0 focus=on follow=on
-bspc rule -a Pavucontrol state=floating center=true
 
+declare -a code=(TelegramDesktop discord)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^6' follow=on focus=on; done
+
+declare -a code=(Subl Geany qBittorrent)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^7' state=floating center=true rectangle=1376x825+0+0 follow=on focus=on; done
+   
+declare -a code=(Code code-oss)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^8' follow=on focus=on; done
+
+declare -a code=(zoom Skype)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^5' state=pseudo_tiled follow=on focus=on; done
+
+declare -a code=(Vivaldi-stable librewolf KeePassXC)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^4' follow=on focus=on; done
+
+bspc rule -a figma-linux desktop='^9'
+
+declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
+
+declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
+System-config-printer.py Pavucontrol Blueberry.py Exo-helper-1 \
+Xfce4-power-manager-settings)
+for i in ${settings[@]}; do
+   bspc rule -a $i desktop='^1' state=floating center=true follow=on focus=on; done
 
 # Border
 bspc config focused_border_color        "#000000"
 bspc config normal_border_color         "#ececec"
 bspc config active_border_color         "#000000"
 
+#
+# Autostart
+#
+
+# Give execution permission for all scripts in the directory
+chmod -R +x ~/.config
+
+# Set display from arandr saved script
+# sh ~/.screenlayout/monitor.sh &
+
 # Bar
 ~/.config/polybar/launch.sh &
 
 # Notifications
+if [[ `pidof dunst` ]]; then
+	pkill dunst
+fi
 /usr/bin/dunst &
 
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Wallpaper
-sh ~/.config/bspwm/scripts/styli.sh -d ~/Изображения &
-
 # Picom
+killall -q picom
+while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom -CGb --experimental-backend --config ~/.config/picom.conf &
+
+# Network Applet
+# nm-applet --indicator &
+
+# Wallpaper
+sh ~/.config/bspwm/scripts/styli.sh -d ~/Pictures/Wallpapers &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
-
-# Yellow colors
-redshift -x && redshift -O 5500k &
 
 # Hide mouse when typing
 xbanish &
 
 # Keyboard
 setxkbmap -option grp:win_space_toggle us,ru &
+# setxkbmap -option grp:alt_shift_toggle us,ru &
 
 # Touchpad
 xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Tapping Enabled" 1
@@ -95,6 +126,13 @@ xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Accel Profile Enabled
 xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Natural Scrolling Enabled" 1
 xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enabled" 1
 
+## Java Applications
+wmname LG3D
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Autostart applications using DEX
+# dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+
 # Autostart applications
 sh $HOME/.config/bspwm/scripts/autostart.sh &
 
@@ -102,3 +140,4 @@ sh $HOME/.config/bspwm/scripts/autostart.sh &
 ~/.config/bspwm/scripts/low_bat_notifier.sh
 
 sh ~/.config/bspwm/scripts/welcome.sh
+

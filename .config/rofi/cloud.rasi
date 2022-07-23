@@ -39,7 +39,7 @@
     normal-foreground:           var(foreground);
     alternate-urgent-foreground: var(red);
     selected-normal-background:  var(lightbg);
-    font:                        "Source Code Pro 20";
+    font:                        "JetBrains Mono 20";
     blackText:			 rgba(0, 0, 0, 100 %);
 }
 window {

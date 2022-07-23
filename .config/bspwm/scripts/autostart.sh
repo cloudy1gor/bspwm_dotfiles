@@ -1,4 +1,5 @@
 #!/bin/bash
+killall -q copyq flameshot plank
 
 arr=("copyq" "flameshot" "plank")
 

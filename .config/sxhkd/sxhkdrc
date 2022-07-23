@@ -2,21 +2,27 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
+# Terminal
 super + Return
 	kitty
+
+# Terminal (floating)
+super + shift + Return
+  bspc rule -a kitty -o state=floating follow=on center=true rectangle=990x710+0+0 && kitty
+
+# btop
+alt + shift + b
+  bspc rule -a kitty -o state=floating follow=on center=true rectangle=1290x910+0+0 && kitty btop
 
 # program launcher
 super + d
 	rofi -modi drun -show drun -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid JetBrains Mono 12"
 
 # show open window
-super + tab
-	rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+alt + Tab
+		rofi -no-lazy-grab -show window -theme ~/.config/rofi/window.rasi
 
 # show ssh sesssions
 super + shift + d
@@ -43,7 +49,7 @@ super + shift + {q,r}
 # close and kill
 super + {_,shift + }q
 	bspc node -{c,k}
-
+    
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
@@ -160,18 +166,32 @@ XF86MonBrightnessUp
       
 
 # Screenshot
+
+super + n
+	~/.config/rofi/wifi.sh
+
 Print
   flameshot gui
 
 # Shortcuts
-super + w
-  google-chrome-stable
 
 super + v
   code
 
-super + shift + Return
+alt + shift + Return
   thunar
 
-super + alt + m
+alt + Return
+	kitty ranger
+
+alt + m
 	kitty cmus
+
+alt + shift + w
+  google-chrome-stable
+
+alt + shift + m
+	google-chrome-stable https://music.youtube.com
+
+alt + shift + y
+	google-chrome-stable https://youtube.com
