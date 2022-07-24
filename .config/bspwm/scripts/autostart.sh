@@ -1,6 +1,7 @@
 #!/bin/bash
 killall -q copyq flameshot plank espanso
 
+blueberry &
 plank &
 sleep 1 && flameshot &
 sleep 2 && copyq &    

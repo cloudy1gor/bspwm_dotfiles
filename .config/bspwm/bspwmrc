@@ -18,19 +18,20 @@ bspc config window_gap                 6
 
 bspc config split_ratio                0.52
 bspc config borderless_monocle         true
-bspc config paddingless_monocle 	      true
+bspc config paddingless_monocle 	     true
 bspc config gapless_monocle            true
 bspc config single_monocle             false
 bspc config pointer_follows_focus      true
 bspc config focus_follows_pointer      true
-bspc config swallow_first_click   		true
-bspc config pointer_modifier      		mod4
-bspc config pointer_action1       		move
-bspc config pointer_action2       		resize_side
-bspc config pointer_action3       		resize_corner
+bspc config swallow_first_click   		 true
+bspc config pointer_modifier      		 mod4
+bspc config pointer_action1       		 move
+bspc config pointer_action2       		 resize_side
+bspc config pointer_action3       		 resize_corner
 
 # Specific settings per app
 bspc rule -r \*:\*
+bspc rule -a "*:floating" state=floating rectangle=1200x800+720+240
 bspc rule -a Plank layer=above manage=on border=off focus=off
 bscp node -f {west,south,north,east,next,prev}
 bspc rule -a copyq state=floating center=true focus=on
@@ -130,9 +131,6 @@ xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enab
 ## Java Applications
 wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Autostart applications using DEX
-# dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 
 # Autostart applications
 sh $HOME/.config/bspwm/scripts/autostart.sh &
