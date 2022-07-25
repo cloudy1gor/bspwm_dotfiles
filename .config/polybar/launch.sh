@@ -8,3 +8,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar
 polybar top -c ~/.config/polybar/config.ini &
+
+if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
+    polybar top_external &
+fi
