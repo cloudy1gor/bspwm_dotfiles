@@ -10,7 +10,7 @@ if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
 fi
 
 if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
-	bspc monitor eDP-1 -d I II III IV V 
+	bspc monitor eDP-1 -d I II III IV V
 	bspc monitor HDMI-1 -d VI VII VIII IX X
 fi
 
@@ -109,8 +109,7 @@ picom -CGb --experimental-backend --config ~/.config/picom.conf &
 # nm-applet --indicator &
 
 # Wallpaper
-# sh ~/.config/bspwm/scripts/styli.sh -d ~/Pictures/Wallpapers &
-sh ~/.config/bspwm/scripts/bg.sh
+feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
 
 # Cursor
 xsetroot -cursor_name left_ptr &

@@ -175,8 +175,8 @@ Print
 
 # Shortcuts
 
-super + v
-  code
+super + w
+	feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
 
 alt + shift + Return
   thunar
@@ -186,6 +186,9 @@ alt + Return
 
 alt + m
 	kitty cmus
+
+alt + shift + v
+  code
 
 alt + shift + w
   google-chrome-stable
