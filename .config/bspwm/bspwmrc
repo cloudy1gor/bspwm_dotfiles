@@ -109,7 +109,8 @@ picom -CGb --experimental-backend --config ~/.config/picom.conf &
 # nm-applet --indicator &
 
 # Wallpaper
-sh ~/.config/bspwm/scripts/styli.sh -d ~/Pictures/Wallpapers &
+# sh ~/.config/bspwm/scripts/styli.sh -d ~/Pictures/Wallpapers &
+sh ~/.config/bspwm/scripts/bg.sh
 
 # Cursor
 xsetroot -cursor_name left_ptr &

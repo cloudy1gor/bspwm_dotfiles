@@ -25,12 +25,10 @@ PKGS=(
   'neofetch'
   'acpi'
   'ranger'
-  'openssh'
   'ueberzug'
   'neovim'
   'unrar'
   'unzip'
-  'llpp'
   'capitaine-cursors'
   'zip'
   'fish'
@@ -52,6 +50,7 @@ PKGS=(
   'plank'
   'neovim'
   'qbittorrent'
+  'autorandr'
 
   'lib32-mesa'
   'vulkan-radeon'
@@ -122,4 +121,4 @@ sudo snap install btop
 
 sudo pacman -Rs firefox xed meld dex
 
-cp -r .config .local ~/
+# cp -r .config .local ~/
