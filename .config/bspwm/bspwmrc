@@ -47,7 +47,7 @@ bspc rule -a discord desktop='^6' follow=on focus=on
 
 declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^6' state=floating right=true rectangle=576x825+20+160 follow=off focus=off; done
+   bspc rule -a $i desktop='^6' state=floating right=true rectangle=576x925+20+60 follow=off focus=off; done
 
 declare -a code=(Subl Geany qBittorrent Koreader)
 for i in ${code[@]}; do
@@ -120,6 +120,9 @@ xsetroot -cursor_name left_ptr &
 
 # Hide mouse when typing
 xbanish &
+
+# Auto-hide the mouse cursor when inactive
+unclutter &
 
 # Keyboard
 setxkbmap -option grp:win_space_toggle us,ru &

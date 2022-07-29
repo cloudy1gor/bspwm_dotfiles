@@ -34,7 +34,6 @@ PKGS=(
   'fish'
   'telegram-desktop'
   'discord'
-  'vivaldi'
   'brightnesctl'
   'feh'
   'capitaine-cursors'
@@ -109,6 +108,7 @@ PKGSP=(
   'ttf-jetbrains-mono'
   'ttf-joypixels'
   'nerd-fonts-noto-sans-regular-complete'
+  'p7zip'
 )
 
 for PKG in "${PKGSP[@]}"; do
