@@ -3,6 +3,8 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Monitors settings
+autorandr --change --default undocked &
+
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
@@ -14,8 +16,8 @@ if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
 	bspc monitor HDMI-1 -d VI VII VIII IX X
 fi
 
-# dosent work
-# sh ~/.config/bspwm/scripts/startup.sh
+bspc config remove_disabled_monitors 		true
+bspc config remove_unplugged_monitors 		true
 
 bspc config border_width                  4
 bspc config window_gap                    6
@@ -72,8 +74,7 @@ for i in ${code[@]}; do
    bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
 
 declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
-System-config-printer.py Pavucontrol Blueberry.py Exo-helper-1 \
-Xfce4-power-manager-settings)
+Nm-connection-editor Pavucontrol:pavucontrol Blueberry.py)
 for i in ${settings[@]}; do
    bspc rule -a $i desktop='^1' state=floating center=true follow=on focus=on; done
 
