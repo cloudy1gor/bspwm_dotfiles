@@ -12,8 +12,8 @@ if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
 fi
 
 if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
-	bspc monitor eDP-1 -d I II III IV V
-	bspc monitor HDMI-1 -d VI VII VIII IX X
+	bspc monitor eDP-1 -d I II III IV V VI VII VIII IX
+	bspc monitor HDMI-1 -d X
 fi
 
 bspc config remove_disabled_monitors 		true
@@ -91,7 +91,7 @@ bspc config active_border_color         "#000000"
 chmod -R +x ~/.config
 
 # Set display from arandr saved script
-# sh ~/.screenlayout/monitor.sh &
+sh ~/.screenlayout/monitor.sh &
 
 # Bar
 ~/.config/polybar/launch.sh &
@@ -146,6 +146,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Autostart applications
 sh $HOME/.config/bspwm/scripts/autostart.sh &
+
+redshift -c ~/.config/redshift.conf &
 
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
