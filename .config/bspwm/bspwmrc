@@ -67,6 +67,10 @@ declare -a code=(Vivaldi-stable librewolf KeePassXC)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^4' follow=on focus=on; done
 
+declare -a code=(qutebrowser ungoogled-chromium)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^2' follow=on focus=on; done
+
 bspc rule -a figma-linux desktop='^9'
 
 declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
@@ -89,6 +93,7 @@ bspc config active_border_color         "#000000"
 
 # Give execution permission for all scripts in the directory
 chmod -R +x ~/.config
+chmod -R +x /srv/http
 
 # Set display from arandr saved script
 sh ~/.screenlayout/monitor.sh &
