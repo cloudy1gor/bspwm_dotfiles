@@ -50,11 +50,24 @@ bspc rule -a "*:floating" state=floating rectangle=1200x800+720+240
 bspc rule -a Plank layer=above manage=on border=off focus=off
 bscp node -f {west,south,north,east,next,prev}
 bspc rule -a copyq state=floating center=true focus=on
+bspc rule -a MEGAsync desktop='^9' state=floating center=true focus=on
 bspc rule -a discord desktop='^6' follow=on focus=on
+
+declare -a code=(qutebrowser ungoogled-chromium)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^2' follow=on focus=on; done
+
+declare -a code=(Vivaldi-stable tor-browser librewolf KeePassXC)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^4' follow=on focus=on; done
 
 declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^6' state=floating right=true rectangle=576x925+20+60 follow=off focus=off; done
+   bspc rule -a $i desktop='^5' state=floating right=true rectangle=576x925+20+60 follow=off focus=off; done
+
+declare -a code=(zoom Skype)
+for i in ${code[@]}; do
+   bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
 
 declare -a code=(Subl Geany qBittorrent Koreader)
 for i in ${code[@]}; do
@@ -63,18 +76,6 @@ for i in ${code[@]}; do
 declare -a code=(Code code-oss)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^8' follow=on focus=on; done
-
-declare -a code=(zoom Skype)
-for i in ${code[@]}; do
-   bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
-
-declare -a code=(Vivaldi-stable tor-browser librewolf KeePassXC)
-for i in ${code[@]}; do
-   bspc rule -a $i desktop='^4' follow=on focus=on; done
-
-declare -a code=(qutebrowser ungoogled-chromium)
-for i in ${code[@]}; do
-   bspc rule -a $i desktop='^2' follow=on focus=on; done
 
 bspc rule -a figma-linux desktop='^9'
 
@@ -122,6 +123,9 @@ picom -CGb --experimental-backend --config ~/.config/picom.conf &
 
 # Wallpaper
 feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
+
+# cleanup unmanaged windows
+bspc wm --adopt-orphans
 
 # Cursor
 xsetroot -cursor_name left_ptr &
