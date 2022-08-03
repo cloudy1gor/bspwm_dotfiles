@@ -5,16 +5,21 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Monitors settings
 autorandr --change --default undocked &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
-
 if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
 	xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 1920x1080 --rotate normal --right-of eDP-1
-fi
 
-if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
 	bspc monitor eDP-1 -d I II III IV V VI VII VIII IX
 	bspc monitor HDMI-1 -d X
+
+else
+
+	bspc monitor -d I II III IV V VI VII VIII IX X
+
 fi
+
+# if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
+
+# fi
 
 bspc config remove_disabled_monitors 		true
 bspc config remove_unplugged_monitors 		true
@@ -94,9 +99,6 @@ bspc config active_border_color         "#000000"
 # Give execution permission for all scripts in the directory
 chmod -R +x ~/.config
 chmod -R +x /srv/http
-
-# Set display from arandr saved script
-sh ~/.screenlayout/monitor.sh &
 
 # Bar
 ~/.config/polybar/launch.sh &
