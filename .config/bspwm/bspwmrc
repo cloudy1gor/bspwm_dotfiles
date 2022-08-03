@@ -63,7 +63,7 @@ declare -a code=(zoom Skype)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
 
-declare -a code=(Vivaldi-stable librewolf KeePassXC)
+declare -a code=(Vivaldi-stable tor-browser librewolf KeePassXC)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^4' follow=on focus=on; done
 

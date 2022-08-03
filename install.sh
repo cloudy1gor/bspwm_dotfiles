@@ -73,6 +73,7 @@ PKGS=(
 	'sublime-text-4'
 	'figma-linux-bin'
   'google-chrome'
+  'tor-browser'
   'keepassxc-git'
   'koreader-bin'
   'zoom'
