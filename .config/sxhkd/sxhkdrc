@@ -12,7 +12,7 @@ super + shift + Return
 
 # btop
 alt + shift + b
-  bspc rule -a kitty -o state=floating follow=on center=true rectangle=1290x910+0+0 && kitty btop
+  bspc rule -a kitty -o state=floating follow=on center=true rectangle=1290x910+0+0 && kitty bpytop
 
 # program launcher
 super + d
@@ -147,8 +147,11 @@ super + {Left,Down,Up,Right}
 # Special hotkeys
 #
 
-# Multimedia keys
+# Hide/Unhide Window
+super + shift + i
+	~/.config/bspwm/scripts/winmask.sh
 
+# Multimedia keys
 
 XF86AudioMute
   amixer -D pulse sset Master toggle-mute & notify-send -a Volume -u low " " -i "~/.config/dunst/icons/volume-mute.svg"
@@ -178,8 +181,11 @@ Print
 super + w
 	feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
 
-alt + shift + Return
+super + BackSpace
   thunar
+
+super + shift + BackSpace
+  bspc rule -a thunar state=floating follow=on center=true rectangle=990x710+0+0 & thunar &
 
 alt + Return
 	kitty ranger

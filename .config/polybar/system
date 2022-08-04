@@ -1,0 +1,10 @@
+; battery/adapter: ls -l /sys/class/power_supply
+; brightness: ls -l /sys/class/brightness
+; backlight: ls -1 /sys/class/backlight/
+; network: ls -l /sys/class/net
+
+[system]
+adapter=ACAD
+battery=BAT1
+graphics_card=amdgpu_bl0
+network_interface=wlan0
