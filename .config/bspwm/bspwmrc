@@ -17,18 +17,14 @@ else
 
 fi
 
-# if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
-
-# fi
-
-bspc config remove_disabled_monitors 		true
+bspc config remove_disabled_monitors 		  true
 bspc config remove_unplugged_monitors 		true
 
 bspc config border_width                  4
 bspc config window_gap                    6
 bspc config split_ratio                   0.52
 bspc config borderless_monocle            true
-bspc config paddingless_monocle 	         true
+bspc config paddingless_monocle 	        true
 bspc config gapless_monocle               true
 bspc config single_monocle                false
 bspc config pointer_follows_focus         true
@@ -38,11 +34,11 @@ bspc config focus_by_distance             true
 bspc config history_aware_focus           true
 bspc config remove_disabled_monitors      true
 bspc config merge_overlapping_monitors    true
-bspc config swallow_first_click   		   true
-bspc config pointer_modifier      		   mod4
-bspc config pointer_action1       		   move
-bspc config pointer_action2       		   resize_side
-bspc config pointer_action3       		   resize_corner
+bspc config swallow_first_click   		    true
+bspc config pointer_modifier      		    mod4
+bspc config pointer_action1       		    move
+bspc config pointer_action2       		    resize_side
+bspc config pointer_action3       		    resize_corner
 
 # Specific settings per app
 bspc rule -r \*:\*
@@ -93,10 +89,6 @@ bspc config focused_border_color        "#000000"
 bspc config normal_border_color         "#ececec"
 bspc config active_border_color         "#000000"
 
-#
-# Autostart
-#
-
 # Give execution permission for all scripts in the directory
 chmod -R +x ~/.config
 chmod -R +x /srv/http
@@ -117,9 +109,6 @@ fi
 killall -q picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom -CGb --experimental-backend --config ~/.config/picom.conf &
-
-# Network Applet
-# nm-applet --indicator &
 
 # Wallpaper
 feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
@@ -157,8 +146,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Autostart applications
 sh $HOME/.config/bspwm/scripts/autostart.sh &
-
-redshift -c ~/.config/redshift.conf &
 
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh

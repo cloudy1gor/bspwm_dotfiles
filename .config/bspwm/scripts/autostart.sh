@@ -1,10 +1,10 @@
 #!/bin/bash
-killall -q copyq flameshot plank espanso
 
-blueberry &
-plank &
-sleep 1 && flameshot &
-sleep 2 && copyq &    
-sleep 3 && espanso &
-sleep 3 && telegram-desktop -startintray &
+declare -a loop=(plank copyq flameshot espanso blueberry)
+for i in "${loop[@]}"; do
+	killall -q "$i" | xargs kill
+  sleep 1 & $i &
+done
 
+killall -q telegram-desktop
+sleep 1 && telegram-desktop -startintray &
