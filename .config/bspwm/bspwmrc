@@ -63,7 +63,7 @@ declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^5' state=floating right=true rectangle=576x925+20+60 follow=off focus=off; done
 
-declare -a code=(zoom Skype)
+declare -a code=(Zoom Skype)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
 
