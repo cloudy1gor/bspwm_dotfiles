@@ -1,0 +1,380 @@
+/** Global *******************************************/
+*{
+	all: unset;
+	font-family: JetBrains Mono;
+}
+
+/** Background ***************************************/
+.bg {
+	/**background-image: url("images/1.jpg");**/
+	background-color: #000;
+	opacity: 0.2;
+}
+
+/** Generic window ***********************************/
+.genwin {
+	background-color: #fff;
+	border: 6px solid #000;
+	border-radius: 16px;
+}
+
+/** Profile ******************************************/
+.face {
+	background-size: 300px;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 300px;
+	min-width: 300px;
+	margin: 0px 0px 0px 0px;
+	border-radius: 100%;
+}
+
+.fullname {
+	color: #0254C1;
+	font-size : 30px;
+	font-weight : bold;
+}
+
+.username {
+	color: #6C7A89;
+	font-size : 22px;
+	font-weight : bold;
+	margin : -25px 0px 0px 0px;
+}
+
+/** Calendar ********************************************/
+.genwinCal {
+	border: 6px solid #000;
+	border-radius: 12px;
+}
+
+.cal {
+    color: #000000;
+    background-color: #6C7A89;
+	border-radius: 7px;
+	padding: 7px;
+    font-weight: bold;
+  }
+
+/** Clock ********************************************/
+.time_hour, .time_min {
+	color: #6C7A89;
+	font-size : 60px;
+	font-weight : bold;
+}
+.time_hour {
+	margin : 15px 0px 0px 15px;
+}
+.time_min {
+	margin : 0px 0px 10px 0px;
+}
+
+.time_mer {
+	color: #0254C1;
+	font-size : 40px;
+	font-weight : bold;
+	margin : 20px 0px 0px -25px;
+}
+
+.time_day {
+	color: #F20361;
+	font-size : 30px;
+	font-weight : normal;
+	margin : 0px 0px 20px -45px;
+}
+
+/** Uptime ********************************************/
+.genwinUp {
+	border: 6px solid #000;
+	border-radius: 12px;
+	background-color: #6C7A89;
+}
+.icontimer {
+	color: #000;
+	font-size : 90px;
+	font-weight : normal;
+  	margin: 0px 0px 0px 15px;
+}
+
+.uphour {
+	color: #000;
+	font-size : 36px;
+	font-weight : bold;
+  	margin: 0px 0px 0px 0px;
+}
+
+.upmin {
+	color: #6C7A89;
+	font-size : 28px;
+	font-weight : bold;
+  	margin: -75px 15px 0px 0px;
+}
+
+/** Music ***************************************/
+.album_art {
+	background-image: url("images/music.png");
+	background-repeat: no-repeat;
+	background-size: 240px;
+	min-height: 220px;
+	min-width: 220px;
+	margin: 20px;
+	border-radius: 14px;
+}
+
+.song {
+	color: #0254C1;
+	font-size : 24px;
+	font-weight : bold;
+	margin : 40px 0px 0px 0px;
+}
+
+.artist {
+	color: #6C7A89;
+	font-size : 16px;
+	font-weight : normal;
+	margin : 0px 0px 15px 0px;
+}
+
+.btn_prev, .btn_play, .btn_next {
+	font-family: Iosevka Nerd Font;
+}
+.btn_prev {
+	color: #6C7A89;
+	font-size : 32px;
+	font-weight : normal;
+}
+.btn_play {
+	color: #000;
+	font-size : 48px;
+	font-weight : bold;
+}
+.btn_next {
+	color: #6C7A89;
+	font-size : 32px;
+	font-weight : normal;
+}
+
+.music_bar scale trough highlight {
+	all: unset;
+	background-color: #ED005F;
+	border-radius: 8px;
+}
+.music_bar scale trough {
+	all: unset;
+	background-color: #fff;
+	border-radius: 8px;
+	min-height: 20px;
+	min-width: 310px;
+	margin : 10px 0px 0px 0px;
+}
+
+/** Weather ***************************************/
+.iconweather {
+	font-size : 120px;
+	font-weight : normal;
+	margin : 0px 0px 0px 30px;
+}
+
+.label_temp {
+	color : #0254C1;
+	font-size : 80px;
+	font-weight : bold;
+	margin : -15px 30px 0px 0px;
+}
+
+.label_stat {
+	color : #000;
+	font-size : 38px;
+	font-weight : bold;
+}
+
+.label_quote {
+	color : #6C7A89;
+	font-size : 16px;
+	font-weight : normal;
+}
+
+/** Applications ***************************************/
+.appbox {
+	margin : 25px 0px 33px 25px;
+}
+
+.app_tor {
+  background-repeat: no-repeat;
+	background-size: 68px;
+	min-height: 68px;
+	min-width: 68px;
+	margin: 8px 12px 0px 0px;
+}
+
+
+/** Links ***************************************/
+.iconweb, .iconmail {
+	color: #fff;
+	font-family: Iosevka Nerd Font;
+	font-size : 100px;
+	font-weight : normal;
+}
+.iconmail {
+	color: #DF584E;
+}
+
+.github {
+	background-color: #fff;
+	border-radius: 16px;
+	border: 6px solid #000;
+}
+
+.iconGitHub {
+	color: #000000;
+	font-family: Iosevka Nerd Font;
+	font-size : 100px;
+	font-weight : normal;
+}
+
+.reddit {
+	background-color: #fff;
+	border-radius: 16px;
+	border: 6px solid #000;
+
+}
+
+.iconReddit {
+	color: #FF4500;
+	font-family: Iosevka Nerd Font;
+	font-size : 100px;
+	font-weight : normal;
+}
+
+.facebook {
+	background-color: #fff;
+	border-radius: 16px;
+	border: 6px solid #000;
+}
+
+.iconFacebook {
+	color: #0abdc6;
+	font-family: Iosevka Nerd Font;
+	font-size : 100px;
+	font-weight : normal;
+}
+
+.youtube {
+	background-color: #fff;
+	border-radius: 16px;
+	border: 6px solid #000;
+}
+
+.iconYoutube {
+	color: #FF0008;
+	font-family: Iosevka Nerd Font;
+	font-size : 100px;
+	font-weight : normal;
+}
+
+.mail {
+	background-color: #fff;
+	border-radius: 16px;
+	border: 6px solid #000;
+}
+
+.mailbox {
+	background-color: #6C7A89;
+	border-radius: 10px;
+	margin: 45px 0px 45px 0px;
+}
+.label_mails {
+	color: #fff;
+	font-size : 32px;
+	font-weight : bold;
+	margin: 0px 12px 0px 12px;
+}
+
+/** Power buttons ***************************************/
+.btn_logout, .btn_sleep, .btn_reboot, .btn_poweroff {
+	font-size : 64px;
+	font-weight : bold;
+}
+
+.btn_logout {
+	color: #F20361;
+}
+.btn_sleep {
+	color: #0254C1;
+}
+.btn_reboot {
+	color: #6C7A89;
+}
+.btn_poweroff {
+	color: #FF0008;
+}
+
+/** Home folders ***************************************/
+.hddbox {
+	background-color: #6C7A89;
+	border-radius: 10px;
+	margin : 15px 15px 0;
+}
+.hddicon {
+	color: #000b1e;
+	font-family: Iosevka Nerd Font;
+	font-size : 70px;
+	font-weight : normal;
+	margin : 25px 20px 25px 40px;
+}
+.hdd_label {
+	color: #000b1e;
+	font-size : 40px;
+	font-weight : bold;
+	margin : 0px 15px 0px 15px;
+}
+.fs_sep {
+	color: #000b1e;
+	font-size : 36px;
+	font-weight : bold;
+}
+
+.iconfolder1, .iconfolder2, .iconfolder3, .iconfolder4, .iconfolder5  {
+	font-family: Iosevka Nerd Font;
+	font-size : 40px;
+	font-weight : normal;
+	margin : 0px 0px 0px 25px;
+}
+.iconfolder1 {
+	color: #FF0008;
+}
+.iconfolder2 {
+	color: #6C7A89;
+}
+.iconfolder3 {
+	color: #0254C1;
+}
+.iconfolder4 {
+	color: #ED005F;
+}
+.iconfolder5 {
+	color: #9100A6;
+}
+
+.label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5  {
+	font-size : 22px;
+	font-weight : normal;
+	margin : 0px 0px 0px 15px;
+}
+.label_folder1 {
+	color: #FF0008;
+}
+.label_folder2 {
+	color: #6C7A89;
+}
+.label_folder3 {
+	color: #0254C1;
+}
+.label_folder4 {
+	color: #ED005F;
+}
+.label_folder5 {
+	color: #9100A6;
+}
+
+/** EOF *************************************************/
