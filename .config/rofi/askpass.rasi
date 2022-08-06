@@ -1,0 +1,23 @@
+@import "colors.rasi"
+
+* {
+    background-color:       @bg;
+    text-color:             @fg;
+		font:				 						"JetBrains Mono 16";
+}
+
+window {
+    width:      						250px;
+    padding:    						20px;
+    border:									2px;
+    border-radius:          10px;
+    border-color:           @selected;
+    location:               center;
+    x-offset:               0;
+    y-offset:               -4%;
+}
+
+entry {
+    expand: 								true;
+    width: 									150px;
+}
