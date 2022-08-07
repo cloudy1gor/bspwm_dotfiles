@@ -82,6 +82,7 @@ PKGS=(
   'ttf-joypixels'
   'nerd-fonts-noto-sans-regular-complete'
   '7-zip-full'
+  'eww-git'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -105,7 +106,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 sudo npm install --global gulp
 
-sudo yay -Rs firefox xed meld dex
+sudo yay -R firefox xed meld dex light xorg-xbacklight
 
 sudo yay -Yc
 
