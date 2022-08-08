@@ -8,7 +8,7 @@ cmd="google-chrome-stable --new-tab"
 
 close_dash() {
 	${EWW} --config "$CFG" close \
-					background profile system clock uptime music github \
+					background profile system calendar clock uptime music github \
 					reddit facebook youtube weather apps cava mail logout sleep reboot poweroff folders
 	rm -rf "$FILE"
 }

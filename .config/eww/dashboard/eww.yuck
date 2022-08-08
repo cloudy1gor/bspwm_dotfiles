@@ -6,6 +6,13 @@
 
 ;; ** Variables ***********************************************************************
 
+;; ███████╗██╗    ██╗██╗    ██╗
+;; ██╔════╝██║    ██║██║    ██║
+;; █████╗  ██║ █╗ ██║██║ █╗ ██║
+;; ██╔══╝  ██║███╗██║██║███╗██║
+;; ███████╗╚███╔███╔╝╚███╔███╔╝
+;; ╚══════╝ ╚══╝╚══╝  ╚══╝╚══╝ 
+                            
 ;; Profile vars
 (defvar IMAGE "images/s.png")
 (defvar NAME "Ihor Saveliev")
@@ -138,7 +145,7 @@
 	(box :class "genwin" 
 		(box :orientation "v" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false" 
 			(box :orientation "h" :vexpand "false" :hexpand "false" 
-				(label :class "iconweather" :halign "start" :style "color: ${HEX};" :text ICON)
+				(label :class "iconweather" :halign "start" :text ICON)
 				(label :class "label_temp" :halign "end" :text TEMP))
 			(box :orientation "v" :spacing 10 :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false" 
 				(label :class "label_stat" :text STAT)

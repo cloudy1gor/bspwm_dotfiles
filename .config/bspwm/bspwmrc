@@ -1,5 +1,12 @@
 #! /bin/sh
 
+# ██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗
+# ██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║
+# ██████╔╝███████╗██████╔╝██║ █╗ ██║██╔████╔██║
+# ██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║
+# ██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║
+# ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝
+                                             
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Monitors settings
@@ -97,6 +104,12 @@ chmod -R +x /srv/http
 
 # Bar
 ~/.config/polybar/launch.sh &
+
+# Eww bar
+if [[ `pidof eww` ]]; then
+	pkill eww
+fi
+eww --restart &
 
 # Notifications
 if [[ `pidof dunst` ]]; then

@@ -6,9 +6,9 @@
 
 /** Background ***************************************/
 .bg {
-	/**background-image: url("images/1.jpg");**/
-	background-color: #000;
-	opacity: 0.2;
+	background-image: url("images/bg.jpg");
+	// background-color: #000;
+	opacity: 0.92;
 }
 
 /** Generic window ***********************************/
@@ -77,7 +77,7 @@
 }
 
 .time_day {
-	color: #F20361;
+	color: #FF0008;
 	font-size : 30px;
 	font-weight : normal;
 	margin : 0px 0px 20px -45px;
@@ -104,10 +104,10 @@
 }
 
 .upmin {
-	color: #6C7A89;
+	color: #000;
 	font-size : 28px;
 	font-weight : bold;
-  	margin: -75px 15px 0px 0px;
+  	margin: 10px 15px 0px 0px;
 }
 
 /** Music ***************************************/
@@ -136,8 +136,9 @@
 }
 
 .btn_prev, .btn_play, .btn_next {
-	font-family: Iosevka Nerd Font;
+	
 }
+
 .btn_prev {
 	color: #6C7A89;
 	font-size : 32px;
@@ -173,6 +174,7 @@
 	font-size : 120px;
 	font-weight : normal;
 	margin : 0px 0px 0px 30px;
+	color : #0254C1;
 }
 
 .label_temp {
@@ -297,7 +299,7 @@
 }
 
 .btn_logout {
-	color: #F20361;
+	color: #0abdc6;
 }
 .btn_sleep {
 	color: #0254C1;
@@ -350,7 +352,7 @@
 	color: #0254C1;
 }
 .iconfolder4 {
-	color: #ED005F;
+	color: #0abdc6;
 }
 .iconfolder5 {
 	color: #9100A6;
@@ -371,7 +373,7 @@
 	color: #0254C1;
 }
 .label_folder4 {
-	color: #ED005F;
+	color: #0abdc6;
 }
 .label_folder5 {
 	color: #9100A6;
