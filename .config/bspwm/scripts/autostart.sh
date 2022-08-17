@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a loop=(plank copyq flameshot espanso blueberry)
+declare -a loop=(copyq flameshot espanso blueberry plank)
 for i in "${loop[@]}"; do
 	killall -q "$i" | xargs kill
   sleep 1 & $i &

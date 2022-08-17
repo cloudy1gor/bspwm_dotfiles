@@ -59,6 +59,9 @@ launch_bar() {
        		polybar -q top -c ~/.config/polybar/config.ini &
        		polybar -q top_external -c ~/.config/polybar/config.ini &
     	else
+    		killall -q polybar &
+    		while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+    		
        		polybar -q top -c ~/.config/polybar/config.ini &
     	fi
 	else

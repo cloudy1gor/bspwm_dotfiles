@@ -6,14 +6,24 @@
 # ██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║
 # ██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║
 # ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝
-                                             
+
 pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Helpers
+rule() { bspc rule -a "$@"; }
+config() { bspc config "$@"; }
+start() {
+    # Do not run command if it's already running
+    if ! pgrep -af "$1" >/dev/null; then
+        "$@" &
+    fi
+}
 
 # Monitors settings
 if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
 	xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 920x1080 --rotate normal --right-of eDP-1
 
-	bspc monitor eDP-1 -d I II III IV V VI VII VIII IX
+	bspc monitor eDP -d I II III IV V VI VII VIII IX
 	bspc monitor HDMI-1 -d X
 
 else
@@ -22,14 +32,14 @@ else
 
 fi
 
-bspc config remove_disabled_monitors 		true
+bspc config remove_disabled_monitors 		  true
 bspc config remove_unplugged_monitors 		true
 
 bspc config border_width                  4
 bspc config window_gap                    6
 bspc config split_ratio                   0.52
 bspc config borderless_monocle            true
-bspc config paddingless_monocle 	         true
+bspc config paddingless_monocle 	        true
 bspc config gapless_monocle               true
 bspc config single_monocle                false
 bspc config pointer_follows_focus         true
@@ -39,17 +49,17 @@ bspc config focus_by_distance             true
 bspc config history_aware_focus           true
 bspc config remove_disabled_monitors      true
 bspc config merge_overlapping_monitors    true
-bspc config swallow_first_click   		   true
-bspc config pointer_modifier      		   mod4
-bspc config pointer_action1       		   move
-bspc config pointer_action2       		   resize_side
-bspc config pointer_action3       		   resize_corner
+bspc config swallow_first_click   		    true
+bspc config pointer_modifier      		    mod4
+bspc config pointer_action1       		    move
+bspc config pointer_action2       		    resize_side
+bspc config pointer_action3       		    resize_corner
 
 # Specific settings per app
 bspc rule -r \*:\*
 bspc rule -a "*:floating" state=floating rectangle=1200x800+720+240
-bspc rule -a Plank layer=above manage=off border=off focus=off
 bscp node -f {west,south,north,east,next,prev}
+bspc rule -a plank layer=above manage=on border=off focus=off
 bspc rule -a copyq state=floating center=true focus=on
 bspc rule -a MEGAsync desktop='^9' state=floating center=true focus=on
 bspc rule -a discord desktop='^6' follow=on focus=on
@@ -77,7 +87,7 @@ for i in ${code[@]}; do
 declare -a code=(Subl Geany qBittorrent Koreader)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^7' state=floating center=true rectangle=1376x825+0+0 follow=on focus=on; done
-   
+
 declare -a code=(Code code-oss)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^8' follow=on focus=on; done
@@ -122,7 +132,7 @@ fi
 
 # Picom
 killall -q picom
-while pgrep -u $UID -x picom >/dev/null; do sleep 1; done 
+while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom -CGb --experimental-backend --config ~/.config/picom.conf &
 
 # Wallpaper
@@ -133,7 +143,7 @@ feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
 #redshift -c ~/.config/redshift/redshift.conf
 
 # cleanup unmanaged windows
-bspc wm --adopt-orphans
+bspc wm --adopt-orphansd
 
 # Cursor
 xsetroot -cursor_name left_ptr &
@@ -159,8 +169,9 @@ xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Accel Profile Enabled
 xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Natural Scrolling Enabled" 1
 xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enabled" 1
 
-## Java Applications
-wmname LG3D
+# Java Applications
+# wmname LG3D
+export PATH=${PATH}:/usr/lib/jvm/default/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Start scripts
