@@ -12,6 +12,7 @@ PKGS=(
 	'git'
   'curl'
   'wget'
+  'wmname'
   'yad'
   'bluez'
   'bluez-utils'
@@ -46,23 +47,26 @@ PKGS=(
   'flameshot'
   'mpv'
   'obs-studio'
-  'plank'
   'neovim'
   'qbittorrent'
   'autorandr'
   'bpytop'
+  'thunar-archive-plugin'
+  'pycharm-community-edition'
 
   'lib32-mesa'
   'vulkan-radeon'
   'lib32-vulkan-radeon'
   'vulkan-icd-loader'
   'lib32-vulkan-icd-loader'
+  'xf86-video-amdgpu'
 
   'nodejs-lts-fermium'
   'npm'
   'python'
   'yarn'
 
+  'plank-git'
 	'librewolf-bin'
 	'timeshift'
 	'wedder'
@@ -99,7 +103,6 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v5
 fisher install matchai/spacefish
 fisher install jethrokuan/z
-
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
