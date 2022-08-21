@@ -87,6 +87,9 @@ PKGS=(
   'nerd-fonts-noto-sans-regular-complete'
   '7-zip-full'
   'eww-git'
+  'peaclock'
+  'ksuperkey'
+
 )
 
 for PKG in "${PKGS[@]}"; do

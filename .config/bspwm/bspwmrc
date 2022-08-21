@@ -21,14 +21,14 @@ start() {
 
 # Monitors settings
 if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
-	xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 920x1080 --rotate normal --right-of eDP-1
+    xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 920x1080 --rotate normal --right-of eDP-1
 
-	bspc monitor eDP -d I II III IV V VI VII VIII IX
-	bspc monitor HDMI-1 -d X
+    bspc monitor eDP -d I II III IV V VI VII VIII IX
+    bspc monitor HDMI-1 -d X
 
 else
 
-	bspc monitor -d I II III IV V VI VII VIII IX X
+    bspc monitor -d I II III IV V VI VII VIII IX X
 
 fi
 
@@ -66,42 +66,42 @@ bspc rule -a discord desktop='^6' follow=on focus=on
 
 declare -a code=(qutebrowser ungoogled-chromium)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^2' follow=on focus=on; done
+bspc rule -a $i desktop='^2' follow=on focus=on; done
 
 declare -a code=(Thunar)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^3' follow=on focus=on; done
+bspc rule -a $i desktop='^3' follow=on focus=on; done
 
 declare -a code=(Vivaldi-stable tor-browser librewolf KeePassXC)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^4' follow=on focus=on; done
+bspc rule -a $i desktop='^4' follow=on focus=on; done
 
 declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^5' state=floating right=true rectangle=576x925+20+60 follow=off focus=off; done
+bspc rule -a $i desktop='^5' state=floating right=true rectangle=576x925+20+60 follow=off focus=off; done
 
 declare -a code=(Zoom Skype)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
+bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
 
 declare -a code=(Subl Geany qBittorrent Koreader)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^7' state=floating center=true rectangle=1376x825+0+0 follow=on focus=on; done
+bspc rule -a $i desktop='^7' state=floating center=true rectangle=1376x825+0+0 follow=on focus=on; done
 
 declare -a code=(Code code-oss)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^8' follow=on focus=on; done
+bspc rule -a $i desktop='^8' follow=on focus=on; done
 
 bspc rule -a figma-linux desktop='^9'
 
-declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
+declare -a code=(GParted Nitrogen Variety Timeshift-gtk Xfce4-terminal)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
+bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
 
 declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
 Nm-connection-editor Pavucontrol:pavucontrol Blueberry.py)
 for i in ${settings[@]}; do
-   bspc rule -a $i desktop='^1' state=floating center=true follow=on focus=on; done
+bspc rule -a $i desktop='^1' state=floating center=true follow=on focus=on; done
 
 # Border
 bspc config focused_border_color        "#000000"
@@ -117,13 +117,13 @@ chmod -R +x /srv/http
 
 # Eww bar
 if [[ `pidof eww` ]]; then
-	pkill eww
+    pkill eww
 fi
 eww --restart &
 
 # Notifications
 if [[ `pidof dunst` ]]; then
-	pkill dunst
+    pkill dunst
 fi
 /usr/bin/dunst &
 
@@ -134,6 +134,10 @@ fi
 killall -q picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom -CGb --experimental-backend --config ~/.config/picom.conf &
+
+# Enable Super Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
 
 # Wallpaper
 feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
@@ -176,7 +180,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Start scripts
 for i in "$HOME"/.config/bspwm/scripts/*.sh; do
-	{
-		eval "$i" &
-	}
+    {
+        eval "$i" &
+    }
 done
