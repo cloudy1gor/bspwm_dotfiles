@@ -9,22 +9,12 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# Helpers
-rule() { bspc rule -a "$@"; }
-config() { bspc config "$@"; }
-start() {
-    # Do not run command if it's already running
-    if ! pgrep -af "$1" >/dev/null; then
-        "$@" &
-    fi
-}
-
 # Monitors settings
-if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
-    xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 920x1080 --rotate normal --right-of eDP-1
+if [[ $(xrandr -q | grep 'HDMI-A-0 connected') ]]; then
+    xrandr --output eDP --primary --mode 1920x1080 --rotate normal --output HDMI-A-0 --mode 920x1080 --rotate normal --right-of eDP
 
     bspc monitor eDP -d I II III IV V VI VII VIII IX
-    bspc monitor HDMI-1 -d X
+    bspc monitor HDMI-A-0 -d X
 
 else
 

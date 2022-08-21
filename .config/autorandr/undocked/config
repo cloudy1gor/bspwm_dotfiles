@@ -1,9 +1,10 @@
-output HDMI-1
+output HDMI-A-0
 off
-output DP-1
+output DisplayPort-0
 off
-output eDP-1
+output eDP
 crtc 0
+gamma 0.909:0.588:0.37
 mode 1920x1080
 pos 0x0
 primary
@@ -11,6 +12,7 @@ rate 60.02
 x-prop-max_bpc 16
 x-prop-non_desktop 0
 x-prop-scaling_mode None
+x-prop-tearfree auto
 x-prop-underscan off
 x-prop-underscan_hborder 0
 x-prop-underscan_vborder 0
