@@ -84,7 +84,7 @@ bspc rule -a $i desktop='^8' follow=on focus=on; done
 
 bspc rule -a figma-linux desktop='^9'
 
-declare -a code=(GParted Nitrogen Variety Timeshift-gtk Xfce4-terminal)
+declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
 
@@ -98,10 +98,6 @@ bspc config focused_border_color        "#000000"
 bspc config normal_border_color         "#ececec"
 bspc config active_border_color         "#000000"
 
-# Give execution permission for all scripts in the directory
-chmod -R +x ~/.config
-chmod -R +x /srv/http
-
 # Bar
 ~/.config/polybar/launch.sh &
 
@@ -109,7 +105,7 @@ chmod -R +x /srv/http
 if [[ `pidof eww` ]]; then
     pkill eww
 fi
-eww --restart &
+eww daemon &
 
 # Notifications
 if [[ `pidof dunst` ]]; then
@@ -135,6 +131,7 @@ feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
 # Yellow colors
 #while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
 #redshift -c ~/.config/redshift/redshift.conf
+#redshift -l 49:36 -t 6600:3800 -m randr &
 
 # cleanup unmanaged windows
 bspc wm --adopt-orphansd

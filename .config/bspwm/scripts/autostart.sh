@@ -1,10 +1,8 @@
 #!/bin/bash
 
-declare -a loop=(copyq flameshot espanso blueberry plank)
-for i in "${loop[@]}"; do
-	killall -q "$i" | xargs kill
-  sleep 1 & $i &
+declare -a restart=( blueberry copyq plank flameshot telegram-desktop -startintray )
+for i in "${restart[@]}"; do
+    pgrep -x "$i" | xargs kill
+    sleep 0.5
+    eval "$i" &
 done
-
-killall -q telegram-desktop
-sleep 1 && telegram-desktop -startintray &

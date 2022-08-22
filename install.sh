@@ -112,6 +112,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 sudo npm install --global gulp
 
+# Give execution permission for all scripts in the directory
+chmod -R +x ~/.config
+chmod -R +x /srv/http
+
 sudo yay -R firefox xed meld dex light xorg-xbacklight
 
 sudo yay -Yc

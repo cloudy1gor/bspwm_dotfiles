@@ -2,6 +2,9 @@
 
 sxhkd &
 xrandr &&
-xrdb -merge ~/.config/.Xresources &&
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 xset r rate 300 50
-exec bspwm
+exec bspwm >/tmp/bspwm-$(date +'%F-%k-%M-%S').log 2>&1
+
+# Default terminal
+export TERMINAL=/bin/kitty
