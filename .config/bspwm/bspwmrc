@@ -22,8 +22,10 @@ else
 
 fi
 
-bspc config remove_disabled_monitors 		  true
+bspc config remove_disabled_monitors 		true
 bspc config remove_unplugged_monitors 		true
+bspc config merge_overlapping_monitors    true
+bspc wm --adopt-orphans
 
 bspc config border_width                  4
 bspc config window_gap                    6
@@ -164,6 +166,10 @@ xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enab
 # wmname LG3D
 export PATH=${PATH}:/usr/lib/jvm/default/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Give execution permission for all scripts in the directory
+chmod -R +x ~/.config
+chmod -R +x /srv/http
 
 # Start scripts
 for i in "$HOME"/.config/bspwm/scripts/*.sh; do

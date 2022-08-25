@@ -1,10 +1,10 @@
-# ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ 
+# ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗
 # ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗
 # ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║
 # ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║
 # ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
-# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
-                                        
+# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
+
 # Terminal
 super + Return
 	kitty
@@ -13,12 +13,13 @@ super + Return
 super + shift + Return
   bspc rule -a kitty -o state=floating follow=on center=true rectangle=990x710+0+0 && kitty
 
-# btop
+# bpytop
 alt + shift + b
   bspc rule -a kitty -o state=floating follow=on center=true rectangle=1290x910+0+0 && kitty bpytop
 
 # program launcher
-super + d
+# super + d
+alt + F1
 	rofi -modi drun -show drun -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid JetBrains Mono 12"
@@ -56,7 +57,7 @@ super + shift + {q,r}
 # close and kill
 super + {_,shift + }q
 	bspc node -{c,k}
-    
+
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
@@ -160,31 +161,30 @@ super + shift + i
 
 # Multimedia keys
 
-XF86AudioMute
-  amixer -D pulse sset Master toggle-mute & notify-send -a Volume -u low " " -i "~/.config/dunst/icons/volume-mute.svg"
-
-
 XF86Audio{Raise,Lower}Volume
- 	amixer -D pulse sset Master {5%+,5%-} unmute & notify-send -a Volume -u low " " -i "~/.config/dunst/icons/volume.svg"
+	~/.config/sxhkd/scripts/volume.sh {up,down}
 
-XF86MonBrightnessDown
-  brightnessctl set 5%- & notify-send -a Brightness -u low " " -i "~/.config/dunst/icons/light.svg"
-      
+# Mute/Unmute Volume.
+XF86AudioMute
+	~/.config/sxhkd/scripts/volume.sh mute
 
-XF86MonBrightnessUp
-  brightnessctl set +5% & notify-send -a Brightness -u low " " -i "~/.config/dunst/icons/light.svg"
-      
+# Raise/Lower Brightness.
+XF86MonBrightness{Up,Down}
+	~/.config/sxhkd/scripts/brightness.sh {up,down}
 
-# Screenshot
+# Generate Random Password.
+super + shift + p
+	~/.config/sxhkd/scripts/randompass.sh
 
+# Wifi
 super + n
 	~/.config/rofi/wifi.sh
 
+# Screenshot
 Print
   flameshot gui
 
 # Shortcuts
-
 super + w
 	feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
 
