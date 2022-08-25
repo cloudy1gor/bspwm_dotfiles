@@ -184,6 +184,10 @@ super + n
 super + shift + b
 	~/.config/rofi/bluetooth.sh
 
+# Touchpad
+super + shift + o
+	~/.config/sxhkd/scripts/touchpad.sh
+
 # Screenshot
 Print
   flameshot gui
