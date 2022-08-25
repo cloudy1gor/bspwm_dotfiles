@@ -1,89 +1,109 @@
-/*
- * ROFI color theme
- *
- * Based on Something Found in the Internet
- *
- * User: Contributors
- * Copyright: *!
- */
-
 configuration {
-  font: "JetBrains Mono 12";
-
-  drun {
-    display-name: "";
-  }
-
-  run {
-    display-name: "";
-  }
-
-  window {
-    display-name: "";
-  }
-
-  timeout {
-    delay: 10;
-    action: "kb-cancel";
-  }
+    disable-history:                false;
+    click-to-exit:                  true;
+    kb-cancel:                      "Escape,Control+c";
+    cycle:                          true;
 }
 
 * {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  spacing: 0;
+    background:			#181f21;
+    background-alt:		#2a3032;
+    brdr:               #131a1c;
+    foreground:			#D8D8D8;
+    foresel:            #67AFC1;
+    selected:			#2a3032;
+    urgent:				#E06C75;
+    on:					#87A181;
+    off:				#D88B9F;
+    font:               "JetBrains Mono 14";
+}
 
-  bg: #2E3440;
-  bg-alt: #3B4252;
-  fg: #81A1C1;
-  fg-alt: #EBCB8B;
-
-  background-color: @bg;
-  text-color: @fg;
+* {
+    background-color:       @background;
+    text-color:             @foreground;
+    foreground-color:       @background-alt;
 }
 
 window {
-  transparency:   "real";
-  location:       center;
-  width:          1000;
-}
-
-mainbox {
-  children: [inputbar, listview];
-}
-
-inputbar {
-  background-color: @bg-alt;
-  children: [prompt, entry];
+    width:      			330px;
+    height:           400px;
+    padding:    			25px;
+    border:					0px;
+    border-radius:          0px;
+    border-color:           @selected;
+    anchor:                 East;
+    location:               East;
+    x-offset:               -10px;
+    y-offset:                40px;
 }
 
 entry {
-  background-color: inherit;
-  padding: 12px 3px;
+    expand: 				true;
+    width: 					150px;
+    text-color:				@foreground;
 }
 
-prompt {
-  background-color: inherit;
-  padding: 12px;
-}
-
-listview {
-  lines: 8;
+element-text, element-icon {
+    background-color:              inherit;
+    text-color:                    inherit;
 }
 
 element {
-  children: [element-icon, element-text];
+    border: 						0px;
+    padding: 						8px;
 }
 
-element-icon {
-  padding: 10px 10px;
+element normal.normal {
+    background-color: 				@background;
+    text-color:       				@foreground;
 }
 
-element-text {
-  padding: 10px 0;
+element normal.urgent {
+    background-color: 				@background;
+    text-color:       				@off;
 }
 
-element-text selected {
-  text-color: @fg-alt;
+element normal.active {
+    background-color: 				@background;
+    text-color:       				@on;
 }
+
+element selected.normal {
+    background-color: 				@selected;
+    text-color:       				@foreground;
+    border: 						0px;
+    border-radius: 					8px;
+    border-color: 					@selected;
+}
+
+element selected.urgent {
+    background-color: 				@background;
+    text-color:       				@off;
+}
+
+element selected.active {
+    border-radius: 					8px;
+    background-color: 				@background-alt;
+    text-color:       				@on;
+}
+
+element alternate.normal {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+
+element alternate.urgent {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+
+element alternate.active {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+
+
+
+
+
+

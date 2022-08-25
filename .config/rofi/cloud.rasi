@@ -115,7 +115,7 @@ element alternate.urgent {
     text-color:       var(alternate-urgent-foreground);
 }
 element alternate.active {
-    background-color: var(alternate-active-background);
+    background-color: var(alternate-normal-background);
     text-color:       var(alternate-active-foreground);
 }
 scrollbar {

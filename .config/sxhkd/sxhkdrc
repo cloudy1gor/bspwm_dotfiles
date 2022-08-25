@@ -156,7 +156,7 @@ super + {Left,Down,Up,Right}
 #
 
 # Hide/Unhide Window
-super + shift + i
+super + w
 	~/.config/bspwm/scripts/winmask.sh
 
 # Multimedia keys
@@ -180,19 +180,32 @@ super + shift + p
 super + n
 	~/.config/rofi/wifi.sh
 
+# Bluetooth
+super + shift + b
+	~/.config/rofi/bluetooth.sh
+
 # Screenshot
 Print
   flameshot gui
 
-# Shortcuts
-super + w
+# Wallpapers
+super + shift + w
 	feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
+
+# Install
+super + shift + i
+  bspc rule -a kitty -o state=floating follow=on center=true rectangle=990x810+0+0 && kitty ~/.config/sxhkd/scripts/install.sh
+
+# Remove
+super + shift + u
+  bspc rule -a kitty -o state=floating follow=on center=true rectangle=990x810+0+0 && kitty ~/.config/sxhkd/scripts/remove.sh
+
+# Clear cashe
+super + shift + y
+  bspc rule -a kitty -o state=floating follow=on center=true rectangle=590x210+0+0 && kitty ~/.config/sxhkd/scripts/cashe.sh
 
 super + BackSpace
   thunar
-
-super + shift + BackSpace
-  bspc rule -a thunar state=floating follow=on center=true rectangle=990x710+0+0 & thunar &
 
 alt + Return
 	kitty ranger
