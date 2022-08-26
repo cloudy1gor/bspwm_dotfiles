@@ -10,7 +10,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Monitors settings
-if [[ $(xrandr -q | grep 'HDMI-A-0 connected') ]]; then
+if [[ $(xrandr -q | grep "HDMI-A-0 connected" | cut -d ' ' -f1) ]]; then
     xrandr --output eDP --primary --mode 1920x1080 --rotate normal --output HDMI-A-0 --mode 920x1080 --rotate normal --right-of eDP
 
     bspc monitor eDP -d I II III IV V VI VII VIII IX
@@ -22,7 +22,7 @@ else
 
 fi
 
-bspc config remove_disabled_monitors 		true
+bspc config remove_disabled_monitors 		  true
 bspc config remove_unplugged_monitors 		true
 bspc config merge_overlapping_monitors    true
 bspc wm --adopt-orphans

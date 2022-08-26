@@ -52,16 +52,13 @@ launch_bar() {
     fi
 
     if [[ ! `pidof polybar` ]]; then
-        if [[ $(xrandr -q | grep 'HDMI-A-0 connected') ]]; then
-            killall -q polybar &
-            while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+        killall -q polybar &
+        while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+        if [[ $(xrandr -q | grep " connected" | cut -d ' ' -f1) ]]; then
             polybar -q top -c ~/.config/polybar/config.ini &
             polybar -q top_external -c ~/.config/polybar/config.ini &
         else
-            killall -q polybar &
-            while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
             polybar -q top -c ~/.config/polybar/config.ini &
         fi
     else

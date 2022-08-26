@@ -89,6 +89,7 @@ PKGS=(
   'eww-git'
   'peaclock'
   'ksuperkey'
+  'mictray'
 
 )
 
