@@ -140,27 +140,40 @@ super + ctrl + shift + space
 # move/resize
 #
 
-; # expand a window by moving one of its side outward
-; super + alt + {h,j,k,l}
-; 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-; # contract a window by moving one of its side inward
-; super + alt + shift + {h,j,k,l}
-; 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+# move window to the next or prev desktop
+control+period
+	~/.config/sxhkd/scripts/wpm_reports.sh move +1
+control+comma
+	~/.config/sxhkd/scripts/wpm_reports.sh move -1
+control+alt+period
+	~/.config/sxhkd/scripts/wpm_reports.sh select +1
+control+alt+comma
+	~/.config/sxhkd/scripts/wpm_reports.sh select -1
+super+{1,2,3,4,5}
+	~/.config/sxhkd/scripts/wpm_reports.sh jump {0,1,2,3,4}
 
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # i3 like resizing
-super + alt + h
-    /bin/sh $HOME/.config/bspwm/resize/shrinkx.sh
 super + alt + l
-    /bin/sh $HOME/.config/bspwm/resize/expandx.sh
+    /bin/sh ~/.config/bspwm/resize/shrinkx.sh
+super + alt + h
+    /bin/sh ~/.config/bspwm/resize/expandx.sh
 super + alt + k
-    /bin/sh $HOM.config/bspwm/resize/shrinky.sh
+    /bin/sh ~/.config/bspwm/resize/shrinky.sh
 super + alt + j
-    /bin/sh $HOME/.config/bspwm/resize/expandy.sh
+    /bin/sh ~/.config/bspwm/resize/expandy.sh
+
+control+alt+space
+	~/.config/sxhkd/scripts/toggle_float.sh
+
+super+shift+{k,j,h,l}
+  ~/.config/sxhkd/scripts/bsmove.sh {north,south,west,east}
+
+super+{k,j,h,l}
+	~/.config/sxhkd/scripts/bselect.sh {north,south,west,east}
 
 #
 # Special hotkeys
