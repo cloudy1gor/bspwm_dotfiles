@@ -14,6 +14,7 @@ PKGS=(
   'wget'
   'wmname'
   'yad'
+  'alsa-utils'
   'bluez'
   'bluez-utils'
   'pulseaudio-bluetooth'
