@@ -54,6 +54,7 @@ PKGS=(
   'bpytop'
   'thunar-archive-plugin'
   'pycharm-community-edition'
+  'docker'
 
   'lib32-mesa'
   'vulkan-radeon'

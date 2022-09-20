@@ -46,6 +46,9 @@ super + shift + e
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# reload polybar
+super + shift + p
+	killall -q polybar & ~/.config/polybar/launch.sh
 #
 # bspwm hotkeys
 #
