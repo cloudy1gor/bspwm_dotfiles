@@ -11,10 +11,10 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Monitors settings
 if [[ $(xrandr -q | grep "HDMI-A-0 connected" | cut -d ' ' -f1) ]]; then
-    xrandr --output eDP --primary --mode 1920x1080 --rotate normal --output HDMI-A-0 --mode 920x1080 --rotate normal --right-of eDP
+    xrandr --output eDP --primary --mode 1920x1080 --rotate normal --output HDMI-A-0 --mode 1920x1080 --rotate normal --right-of eDP
 
-    bspc monitor eDP -d I II III IV V VI VII VIII IX
-    bspc monitor HDMI-A-0 -d X
+    bspc monitor ^1 -d I II III IV V VI VII VIII IX
+    bspc monitor ^2 -d X
 
 else
 
@@ -84,7 +84,9 @@ declare -a code=(Code code-oss)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^8' follow=on focus=on; done
 
-bspc rule -a figma-linux desktop='^9'
+declare -a code=(figma-linux Kuro)
+for i in ${code[@]}; do
+bspc rule -a $i desktop='^9' state=floating center=true rectangle=1476x925+0+0 focus=on follow=on; done
 
 declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
 for i in ${code[@]}; do
