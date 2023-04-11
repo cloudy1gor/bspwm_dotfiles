@@ -22,16 +22,16 @@ else
 
 fi
 
-bspc config remove_disabled_monitors 		  true
+bspc config remove_disabled_monitors 		true
 bspc config remove_unplugged_monitors 		true
 bspc config merge_overlapping_monitors    true
 bspc wm --adopt-orphans
 
-bspc config border_width                  4
+bspc config border_width                  6
 bspc config window_gap                    6
 bspc config split_ratio                   0.52
 bspc config borderless_monocle            true
-bspc config paddingless_monocle 	        true
+bspc config paddingless_monocle 	         true
 bspc config gapless_monocle               true
 bspc config single_monocle                false
 bspc config pointer_follows_focus         true
@@ -41,30 +41,30 @@ bspc config focus_by_distance             true
 bspc config history_aware_focus           true
 bspc config remove_disabled_monitors      true
 bspc config merge_overlapping_monitors    true
-bspc config swallow_first_click   		    true
-bspc config pointer_modifier      		    mod4
-bspc config pointer_action1       		    move
-bspc config pointer_action2       		    resize_side
-bspc config pointer_action3       		    resize_corner
+bspc config swallow_first_click   		   true
+bspc config pointer_modifier      		   mod4
+bspc config pointer_action1       		   move
+bspc config pointer_action2       		   resize_side
+bspc config pointer_action3       		   resize_corner
 
 # Specific settings per app
 bspc rule -r \*:\*
 bspc rule -a "*:floating" state=floating rectangle=1200x800+720+240
 bscp node -f {west,south,north,east,next,prev}
 bspc rule -a plank layer=above manage=on border=off focus=off
+bspc rule -a cairo-dock layer=above manage=on border=off focus=off
 bspc rule -a copyq state=floating center=true focus=on
 bspc rule -a MEGAsync desktop='^9' state=floating center=true focus=on
-bspc rule -a discord desktop='^6' follow=on focus=on
 
-declare -a code=(qutebrowser ungoogled-chromium)
+declare -a code=(qutebrowser)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^2' follow=on focus=on; done
 
-declare -a code=(Thunar)
+declare -a code=(Thunar Koreader)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^3' follow=on focus=on; done
 
-declare -a code=(Vivaldi-stable tor-browser librewolf KeePassXC)
+declare -a code=(LibreWolf KeePassXC tor-browser qBittorrent)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^4' follow=on focus=on; done
 
@@ -72,19 +72,23 @@ declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^5' state=floating right=true rectangle=576x925+20+60 follow=off focus=off; done
 
-declare -a code=(Zoom Skype)
+declare -a code=(Zoom Skype discord)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
 
-declare -a code=(Subl Geany qBittorrent Koreader)
+declare -a code=(obsidian)
+for i in ${code[@]}; do
+bspc rule -a $i desktop='^6' follow=on focus=on; done
+
+declare -a code=(Subl Koreader)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^7' state=floating center=true rectangle=1376x825+0+0 follow=on focus=on; done
 
-declare -a code=(Code code-oss)
+declare -a code=(Code code-oss jetbrains-phpstorm)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^8' follow=on focus=on; done
 
-declare -a code=(figma-linux Kuro)
+declare -a code=(Virt-manager figma-linux Kuro)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^9' state=floating center=true rectangle=1476x925+0+0 focus=on follow=on; done
 
@@ -123,7 +127,7 @@ fi
 # Picom
 killall -q picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
-picom -CGb --experimental-backend --config ~/.config/picom.conf &
+picom -CGb --config ~/.config/picom.conf &
 
 # Enable Super Keys For Menu
 ksuperkey -e 'Super_L=Alt_L|F1' &
@@ -151,7 +155,6 @@ unclutter &
 
 # Keyboard
 setxkbmap -option grp:win_space_toggle us,ru &
-# setxkbmap -option grp:alt_shift_toggle us,ru &
 
 # Touchpad
 xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Tapping Enabled" 1
@@ -165,13 +168,13 @@ xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Natural Scrolling Ena
 xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enabled" 1
 
 # Java Applications
-# wmname LG3D
-export PATH=${PATH}:/usr/lib/jvm/default/bin
-export _JAVA_AWT_WM_NONREPARENTING=1
+# export PATH=${PATH}:/usr/lib/jvm/default/bin
+# export _JAVA_AWT_WM_NONREPARENTING=1
+wmname LG3D
+#[ "$1" = 0 ] && wmname LG3D
 
 # Give execution permission for all scripts in the directory
 chmod -R +x ~/.config
-chmod -R +x /srv/http
 
 # Start scripts
 for i in "$HOME"/.config/bspwm/scripts/*.sh; do
@@ -179,3 +182,6 @@ for i in "$HOME"/.config/bspwm/scripts/*.sh; do
         eval "$i" &
     }
 done
+
+ # Comand to show app name
+ # xprop | grep WM_CLASS

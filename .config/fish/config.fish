@@ -5,6 +5,8 @@
 # ██║     ██║███████║██║  ██║
 # ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
                            
+if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
+
 set fish_greeting ""
 
 # theme
@@ -95,5 +97,6 @@ if test -f $LOCAL_CONFIG
 end
 
 if status --is-interactive
-   neofetch
+   colorscript -r
+   # neofetch
 end

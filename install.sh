@@ -1,10 +1,13 @@
 #!/bin/sh
 
 clear
-sudo pacman -Syyuu
+sudo pacman -Syyu
+sudo pacman -S archlinux-keyring
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
-sudo pacman -S yay --noconfirm --needed
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
 yay --editmenu --nodiffmenu --save
 
@@ -14,33 +17,54 @@ PKGS=(
   'wget'
   'wmname'
   'yad'
+  'micro'
+  'kitty'
+  'fish'
+  'feh'
+  'shell-color-scripts'
+
+  'xf86-video-amdgpu'
+
+  'ttf-jetbrains-mono-nerd'
+  'ttf-iosevka-nerd'
+  'ttf-ms-win11-auto'
+  
+  'thunar'
+  'thunar-archive-plugin'
+  'thunar-megasync-bin'
+  'gvfs'
+  'tumbler'
+  'ffmpegthumbnailer'
+  'tumbler-folder-thumbnailer'
+  'unrar'
+  'unzip'
+  'zip'
+  '7-zip-full'
+  'ranger'
+  'ueberzug'
+  'ntfs-3g'
+
+ 	'librewolf-bin'
+  'google-chrome'
+  
+  'lxappearance'
+  'xsettingsd'
   'alsa-utils'
   'bluez'
   'bluez-utils'
   'pulseaudio-bluetooth'
   'blueberry'
   'brightnessctl'
-  'feh'
   'timeshift'
-  'micro'
   'papirus-icon-theme'
   'neofetch'
   'acpi'
-  'ranger'
-  'ueberzug'
-  'neovim'
-  'unrar'
-  'unzip'
   'capitaine-cursors'
-  'zip'
-  'fish'
   'telegram-desktop'
   'discord'
   'brightnesctl'
   'feh'
   'capitaine-cursors'
-  'ueberzug'
-  'kitty'
   'telegram-desktop'
   'copyq'
   'ncdu'
@@ -48,78 +72,76 @@ PKGS=(
   'flameshot'
   'mpv'
   'obs-studio'
-  'neovim'
   'qbittorrent'
   'autorandr'
-  'bpytop'
-  'thunar-archive-plugin'
-  'pycharm-community-edition'
-  'docker'
+  'btop'
 
-  'lib32-mesa'
-  'vulkan-radeon'
-  'lib32-vulkan-radeon'
-  'vulkan-icd-loader'
-  'lib32-vulkan-icd-loader'
-  'xf86-video-amdgpu'
-
+  'neovim'
+  'visual-studio-code-bin'
+  'phpstorm'
+  'jre-openjdk'
   'nodejs-lts-fermium'
   'npm'
   'python'
   'yarn'
+  'php'
+  'docker'
 
-  'plank-git'
-	'librewolf-bin'
+  'qemu-full'
+  'virt-manager'
+  'virt-viewer'
+  'dnsmasq'
+  'vde2'
+  'bridge-utils'
+  'openbsd-netcat'
+  'ebtables'
+  'iptables'
+  'libguestfs'
+  
 	'timeshift'
 	'wedder'
 	'espanso-bin'
   'picom-jonaburg-git'
   'redshift-minimal'
-  'visual-studio-code-bin'
-	'sublime-text-4'
 	'figma-linux-bin'
-  'google-chrome'
-  'tor-browser'
-  'keepassxc-git'
+  'obsidian'
   'koreader-bin'
   'zoom'
   'skypeforlinux-stable-bin'
-  'ttf-jetbrains-mono'
-  'ttf-joypixels'
-  'nerd-fonts-noto-sans-regular-complete'
-  '7-zip-full'
-  'eww-git'
   'peaclock'
   'ksuperkey'
   'mictray'
-
+  'syncthing'
+  'keepassxc-git'
 )
 
 for PKG in "${PKGS[@]}"; do
   echo "Installing: ${PKG}"
-  sudo yay -S "$PKG" --noconfirm --needed
+  yay -S "$PKG" --noconfirm --needed
 done
 
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+sudo usermod -a -G libvirt $(whoami)
+sudo systemctl restart libvirtd.service
 
 chsh -s /usr/bin/fish
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
+fisher install PatrickF1/fzf.fish
 fisher install IlanCosman/tide@v5
-fisher install matchai/spacefish
 fisher install jethrokuan/z
-
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 sudo npm install --global gulp
 
 # Give execution permission for all scripts in the directory
 chmod -R +x ~/.config
-chmod -R +x /srv/http
 
-sudo yay -R firefox xed meld dex light xorg-xbacklight
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+
+tide configure
 
 sudo yay -Yc
 

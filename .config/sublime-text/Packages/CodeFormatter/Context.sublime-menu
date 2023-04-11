@@ -1,7 +1,0 @@
-[
-	{
-		"id": "CodeFormatter",
-		"caption": "Format Code",
-		"command": "code_formatter"
-	}
-]

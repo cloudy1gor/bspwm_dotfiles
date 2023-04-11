@@ -44,9 +44,9 @@ element {
 element-text {
     background-color: 				inherit;
     text-color:       				inherit;
-	font:							"Iosevka Term 32";
+	font:							"JetBrainsMono Nerd Font 18";
     expand:                         true;
-    horizontal-align:               0.5;
+    horizontal-align:               0.4;
     vertical-align:                 0.5;
     margin:                         26px 26px 26px 26px;
 }

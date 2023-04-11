@@ -9,11 +9,13 @@
 DIR="$HOME/.config/dunst"
 
 function get_volume {
-      amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}'
+      # amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}'
+      amixer -D pipewire get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}'
 }
 
 function is_mute {
-      amixer -D pulse get Master | grep '%' | grep -oE '[^ ]+$' | grep off
+      # amixer -D pulse get Master | grep '%' | grep -oE '[^ ]+$' | grep off
+      amixer -D pipewire get Master | grep '%' | grep -oE '[^ ]+$' | grep off
 }
 
 function send_notification {
@@ -46,22 +48,28 @@ function send_notification {
 case $1 in
   up)
     # Unmute
-	  amixer -D pulse set Master on > /dev/null
+	  # amixer -D pulse set Master on > /dev/null
 	  # +5%
-	  amixer -D pulse set Master 5%+ > /dev/null
+	  # amixer -D pulse set Master 5%+ > /dev/null
+    
+	  amixer -D pipewire set Master 5%+ > /dev/null
     send_notification
     ;;
   down)
     # Unmute
-	  amixer -D pulse set Master on > /dev/null
+	  # amixer -D pulse set Master on > /dev/null
     # -5%
-	  amixer -D pulse set Master 5%- > /dev/null
+	  # amixer -D pulse set Master 5%- > /dev/null
+    
+	  amixer -D pipewire set Master 5%- > /dev/null
     send_notification
     ;;
   mute)
     # Toggle mute
-	  amixer -D pulse set Mic toggle > /dev/null
-	  amixer -D pulse set Master 1+ toggle > /dev/null
+	  # amixer -D pulse set Mic toggle > /dev/null
+	  # amixer -D pulse set Master 1+ toggle > /dev/null 
+	  amixer -D pipewire set Mic toggle > /dev/null
+	  amixer -D pipewire set Master 1+ toggle > /dev/null 
     if is_mute ; then
       icon_name="$DIR/icons/volume-mute.svg"
       dunstify "Mute" -i $icon_name -r 5555 -u normal -h int:value:0
@@ -70,9 +78,3 @@ case $1 in
     fi
     ;;
 esac
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
