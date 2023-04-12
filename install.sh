@@ -23,12 +23,15 @@ PKGS=(
   'feh'
   'shell-color-scripts'
 
+	# Gpu drivers
   'xf86-video-amdgpu'
 
+	# Fonts
   'ttf-jetbrains-mono-nerd'
   'ttf-iosevka-nerd'
   'ttf-ms-win11-auto'
-  
+
+  # File manager & utils
   'thunar'
   'thunar-archive-plugin'
   'thunar-megasync-bin'
@@ -44,6 +47,14 @@ PKGS=(
   'ueberzug'
   'ntfs-3g'
 
+	# Media
+  'mpv'
+  'mpd'
+  'ncmpcpp'
+  'mpc'
+  'musikcube-bin'
+
+	# Browsers
  	'librewolf-bin'
   'google-chrome'
   
@@ -68,14 +79,13 @@ PKGS=(
   'telegram-desktop'
   'copyq'
   'ncdu'
-  'cmus'
   'flameshot'
-  'mpv'
   'obs-studio'
   'qbittorrent'
   'autorandr'
   'btop'
 
+	# Dev apps
   'neovim'
   'visual-studio-code-bin'
   'phpstorm'
@@ -87,6 +97,7 @@ PKGS=(
   'php'
   'docker'
 
+	# VM
   'qemu-full'
   'virt-manager'
   'virt-viewer'
@@ -97,8 +108,8 @@ PKGS=(
   'ebtables'
   'iptables'
   'libguestfs'
-  
-	'timeshift'
+
+  # Other
 	'wedder'
 	'espanso-bin'
   'picom-jonaburg-git'
@@ -120,12 +131,11 @@ for PKG in "${PKGS[@]}"; do
   yay -S "$PKG" --noconfirm --needed
 done
 
-sudo systemctl enable bluetooth
-sudo systemctl start bluetooth
-sudo systemctl enable libvirtd.service
-sudo systemctl start libvirtd.service
+sudo systemctl enable --now bluetooth
+sudo systemctl enable --now libvirtd.service
 sudo usermod -a -G libvirt $(whoami)
 sudo systemctl restart libvirtd.service
+systemctl --user enable --now mpd.service
 
 chsh -s /usr/bin/fish
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher

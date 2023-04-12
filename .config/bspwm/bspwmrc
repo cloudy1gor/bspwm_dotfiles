@@ -22,8 +22,8 @@ else
 
 fi
 
-bspc config remove_disabled_monitors 		true
-bspc config remove_unplugged_monitors 		true
+bspc config remove_disabled_monitors 	  true
+bspc config remove_unplugged_monitors 	  true
 bspc config merge_overlapping_monitors    true
 bspc wm --adopt-orphans
 
@@ -31,7 +31,7 @@ bspc config border_width                  6
 bspc config window_gap                    6
 bspc config split_ratio                   0.52
 bspc config borderless_monocle            true
-bspc config paddingless_monocle 	         true
+bspc config paddingless_monocle 	      true
 bspc config gapless_monocle               true
 bspc config single_monocle                false
 bspc config pointer_follows_focus         true
@@ -41,11 +41,12 @@ bspc config focus_by_distance             true
 bspc config history_aware_focus           true
 bspc config remove_disabled_monitors      true
 bspc config merge_overlapping_monitors    true
-bspc config swallow_first_click   		   true
-bspc config pointer_modifier      		   mod4
-bspc config pointer_action1       		   move
-bspc config pointer_action2       		   resize_side
-bspc config pointer_action3       		   resize_corner
+bspc config swallow_first_click   	      true
+bspc config pointer_modifier      		  mod4
+bspc config pointer_action1       		  move
+bspc config pointer_action2       		  resize_side
+bspc config pointer_action3               resize_corner
+bspc config ignore_ewmh_focus             true
 
 # Specific settings per app
 bspc rule -r \*:\*
@@ -70,7 +71,7 @@ bspc rule -a $i desktop='^4' follow=on focus=on; done
 
 declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
-bspc rule -a $i desktop='^5' state=floating right=true rectangle=576x925+20+60 follow=off focus=off; done
+bspc rule -a $i desktop='^5' follow=off focus=off; done
 
 declare -a code=(Zoom Skype discord)
 for i in ${code[@]}; do
@@ -175,6 +176,9 @@ wmname LG3D
 
 # Give execution permission for all scripts in the directory
 chmod -R +x ~/.config
+
+# Include external_rules
+bspc config external_rules_command ~/.config/bspwm/external_rules
 
 # Start scripts
 for i in "$HOME"/.config/bspwm/scripts/*.sh; do

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+wid=$1
+class=$2
+instance=$3
+title="$(xtitle "$wid")"
+
+read W H <<< $(xdotool getdisplaygeometry)
+
+# Floats, resizes and moves window
+if [ "$instance" = "surf" ]; then
+    if [[ $(xprop -id $wid '\t$0' WM_NAME | cut -f 2) == *"Messenger"* ]]; then
+        w=$((1920 / 4))
+        h=$((1080 / 4))
+        xdotool windowsize $wid $w $h
+        xdotool windowmove $wid $(($W - $w)) $(($H- $h))
+    fi
+    echo "state=floating"
+    echo "sticky=on"
+fi
+
+# Move window to where the mouse is
+if [ "$instance" = "popup-mouse" ]; then
+    echo "state=floating"
+    eval $(xdotool getmouselocation --shell)
+    xdotool windowmove $wid $X $Y
+fi
+
+# Fullscreen mode for telegram images
+if [ "$class" = "TelegramDesktop" ] && [ "$title" = "Media viewer" ]; then
+    echo "state=fullscreen"
+fi
