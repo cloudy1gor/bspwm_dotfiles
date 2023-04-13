@@ -24,6 +24,10 @@ alt + F1
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid JetBrains Mono 12"
 
+# Show/hide bottom bar
+super + d
+	sh ~/.config/sxhkd/scripts/toogle_bar_bottom.sh
+
 # Open/close dashboard
 super + b
 	sh ~/.config/eww/dashboard/launch_dashboard

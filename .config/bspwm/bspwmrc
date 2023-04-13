@@ -48,6 +48,11 @@ bspc config pointer_action2       		  resize_side
 bspc config pointer_action3               resize_corner
 bspc config ignore_ewmh_focus             true
 
+# Border
+bspc config focused_border_color        "#000000"
+bspc config normal_border_color         "#ececec"
+bspc config active_border_color         "#000000"
+
 # Specific settings per app
 bspc rule -r \*:\*
 bspc rule -a "*:floating" state=floating rectangle=1200x800+720+240
@@ -71,11 +76,11 @@ bspc rule -a $i desktop='^4' follow=on focus=on; done
 
 declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
-bspc rule -a $i desktop='^5' follow=off focus=off; done
+bspc rule -a $i desktop='^5' state=floating follow=off focus=off; done
 
 declare -a code=(Zoom Skype discord)
 for i in ${code[@]}; do
-bspc rule -a $i desktop='^5' state=floating center=on follow=on border=off focus=on; done
+bspc rule -a $i desktop='^5' center=on follow=on border=off focus=on; done
 
 declare -a code=(obsidian)
 for i in ${code[@]}; do
@@ -93,6 +98,10 @@ declare -a code=(Virt-manager figma-linux Kuro)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^9' state=floating center=true rectangle=1476x925+0+0 focus=on follow=on; done
 
+# declare -a code=('*:ncmpcpp', '*:cmus', '*:emusikcube', '*:cava')
+# for i in ${code[@]}; do
+# bspc rule -a $i desktop='^10' follow=off focus=off; done
+
 declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
@@ -101,11 +110,6 @@ declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
 Nm-connection-editor Pavucontrol:pavucontrol Blueberry.py)
 for i in ${settings[@]}; do
 bspc rule -a $i desktop='^1' state=floating center=true follow=on focus=on; done
-
-# Border
-bspc config focused_border_color        "#000000"
-bspc config normal_border_color         "#ececec"
-bspc config active_border_color         "#000000"
 
 # Bar
 ~/.config/polybar/launch.sh &
@@ -142,9 +146,6 @@ feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
 #redshift -c ~/.config/redshift/redshift.conf
 #redshift -l 49:36 -t 6600:3800 -m randr &
 
-# cleanup unmanaged windows
-bspc wm --adopt-orphansd
-
 # Cursor
 xsetroot -cursor_name left_ptr &
 
@@ -169,13 +170,7 @@ xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Natural Scrolling Ena
 xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enabled" 1
 
 # Java Applications
-# export PATH=${PATH}:/usr/lib/jvm/default/bin
-# export _JAVA_AWT_WM_NONREPARENTING=1
 wmname LG3D
-#[ "$1" = 0 ] && wmname LG3D
-
-# Give execution permission for all scripts in the directory
-chmod -R +x ~/.config
 
 # Include external_rules
 bspc config external_rules_command ~/.config/bspwm/external_rules

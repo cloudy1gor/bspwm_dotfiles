@@ -97,6 +97,5 @@ if test -f $LOCAL_CONFIG
 end
 
 if status --is-interactive
-   colorscript -r
-   # neofetch
+   neofetch
 end

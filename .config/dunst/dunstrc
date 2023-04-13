@@ -11,7 +11,7 @@
     width = 300
     height = 400
     origin = top-right
-    offset = 6x45
+    offset = 8x55
     scale = 1
     indicate_hidden = yes
     timeout = 4
@@ -26,7 +26,7 @@
 	separator_color = frame
 	sort = yes
 	idle_threshold = 120
-	font = Liga SFMono Nerd Font Bold 12 
+	font = JetBrainsMono Nerd Font Bold 12 
 	line_height = 4
 	markup = full
 	format = "%a\n%s\n%b"

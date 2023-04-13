@@ -1,5 +1,6 @@
 configuration {
 	font:														"JetBrains Mono 12";
+	terminal: 											"kitty";
 	show-icons:                     true;
 	icon-theme: 										"Papirus";
 	display-drun: 									"";

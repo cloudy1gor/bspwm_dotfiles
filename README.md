@@ -9,7 +9,7 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=sudo+sh+install.sh)](https://git.io/typing-svg)
 
-![](/screen.png)</br>
+![](/screen.jpg)</br>
 
 <h2 align="center">Thanks to: </h2>
 

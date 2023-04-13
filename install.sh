@@ -21,7 +21,6 @@ PKGS=(
   'kitty'
   'fish'
   'feh'
-  'shell-color-scripts'
 
 	# Gpu drivers
   'xf86-video-amdgpu'
@@ -36,6 +35,7 @@ PKGS=(
   'thunar-archive-plugin'
   'thunar-megasync-bin'
   'gvfs'
+  'gvfs-mtp'
   'tumbler'
   'ffmpegthumbnailer'
   'tumbler-folder-thumbnailer'
@@ -46,12 +46,14 @@ PKGS=(
   'ranger'
   'ueberzug'
   'ntfs-3g'
+  'gksu'
 
 	# Media
   'mpv'
   'mpd'
   'ncmpcpp'
   'mpc'
+  'cava'
   'musikcube-bin'
 
 	# Browsers
@@ -84,6 +86,7 @@ PKGS=(
   'qbittorrent'
   'autorandr'
   'btop'
+  'htop'
 
 	# Dev apps
   'neovim'
