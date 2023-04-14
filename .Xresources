@@ -1,17 +1,20 @@
-Xft.dpi: 115
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.autohint  : false
-Xft.hintstyle : hintfull
-Xft.lcdfilter : lcddefault
-st.font: 				JetBrainsMono Nerd Font:pixelsize=15
+Xft.dpi:         115
+Xft.antialias:   true
+Xft.rgba:        rgb
+Xft.hinting:     true
+Xft.autohint:    false
+Xft.hintstyle:   hintfull
+Xft.lcdfilter:   lcddefault
+
+! Comand for search font:: fc-list | grep "JetBrains Mono"
+*.font: xft:JetBrainsMonoNL Nerd Font Mono:style=Medium,Regular:size=12
 
 Xcursor.size: 24
 Xcursor.theme: capitaine-cursors
 
 URxvt.scrollBar: off
 URxvt.internalBorder:22Rxvt.scrollBar: off
+URxvt.intensityStyles: false
 
 
 ! Extensions
@@ -27,6 +30,9 @@ URxvt.keyboard-select.clipboard: true
 URxvt.urlLauncher:          xdg-open
 URxvt.urlButton: 	          1
 URxvt.underlineURLs:        true
+URxvt.keysym.C-minus:       resize-font:smaller
+URxvt.keysym.C-plus:        resize-font:bigger
+URxvt.keysym.C-equal:       resize-font:equal
 
 !URxvt.copyCommand:  xclip -i -selection clipboard
 !URxvt.pasteCommand: xclip -o -selection clipboard
@@ -41,44 +47,64 @@ URxvt.keysym.C-minus: resize-font:smaller
 URxvt.keysym.C-plus:  resize-font:bigger
 URxvt.resize-font.step: 1
 
-!Courier
-!URxvt.font: xft:Courier-10
+! JetBrainsMono
+URxvt.font: xft:JetBrainsMonoNL Nerd Font Mono:style=Medium,Regular:size=12
+URxvt.boldFont: xft:JetBrainsMonoNL Nerd Font Mono:style=Bold:size=14
+URxvt.italicFont: xft:JetBrainsMonoNL Nerd Font Mono:style=Italic:size=14
+URxvt.boldItalicFont: xft:JetBrainsMonoNL Nerd Font Mono:style=Bold Italic:size=14
+URxvt.letterSpace: -1
 
-!!JetBrainsMono
-URxvt.font: xft:JetBrainsMono Nerd Font:style=Medium:size=12
-URxvt.boldFont xft:JetBrainsMono Nerd Font:style=Regular:size=14
-URxvt.italicFont: xft:JetBrainsMono Nerd Font:style=Italic:size=14
-!URxvt.letterSpace: -1
-
-! Tango theme
-
-URxvt.foreground: #1C1C1C
-URxvt.background: #DEDEDE
+! Catppuccin Latte theme
+! special
+URxvt.background: #EFF1F5
+URxvt.foreground: #4C4F69
+URxvt.cursorColor: #DC8A78
 
 ! black
-URxvt.color0  : #2E3436
-URxvt.color8  : #555753
+URxvt.color0: #5C5F77
+URxvt.color8: #6C6F85
+
 ! red
-URxvt.color1  : #CC0000
-URxvt.color9  : #EF2929
+URxvt.color1: #D20F39
+URxvt.color9: #D20F39
+
 ! green
-URxvt.color2  : #4E9A06
-URxvt.color10 : #8AE234
+URxvt.color2: #40A02B
+URxvt.color10: #40A02B
+
 ! yellow
-URxvt.color3  : #C4A000
-URxvt.color11 : #FCE94F
+URxvt.color3: #DF8E1D
+URxvt.color11: #DF8E1D
+
 ! blue
-URxvt.color4  : #3465A4
-URxvt.color12 : #7f87bd
+URxvt.color4: #1E66F5
+URxvt.color12: #1E66F5
+
 ! magenta
-URxvt.color5  : #75507B
-URxvt.color13 : #AD7FA8
+URxvt.color5: #EA76CB
+URxvt.color13: #EA76CB
+
 ! cyan
-URxvt.color6  : #06989A
-URxvt.color14 : #d0ddff
+URxvt.color6: #179299
+URxvt.color14: #179299
+
 ! white
-URxvt.color7  : #D3D7CF
-URxvt.color15 : #EEEEEC
+URxvt.color7: #ACB0BE
+URxvt.color15: #BCC0CC
+
+!! URxvt Appearance
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
 
 ! Weird ISO thing when i hold ctrl + shift, disabled
 URxvt.iso14755: false

@@ -1,7 +1,22 @@
 
+
+[![screen.png](https://i.postimg.cc/YCnknjyk/screen.png)](https://postimg.cc/fV96kWNg)
+
+
 <h1 align="center">BSPWM dotfiles </a>
 <img src="https://github.com/blackcater/blackcater/raw/main/images/banner.gif" height="32"/></h1>
 <h3 align="center">My configuration files include: bspwm, polybar, rofi, dnust, eww, kitty, fish, ranger, mpv, redfish, cmus, bpytop...</h3></br>
+
+## Basic packages for Arch.  
++ **WM**: BSPWM
++ **Bar**: Polybar
++ **Launcher**: Rofi
++ **Shell**: Fish
++ **Terminal**: Kitty
++ **Wallpaper Manager**: Feh
++ **File Manager**: Thunar/Ranger
++ **Music Player**: Ncmpcpp/Mpd
++ **Editor**: AstroNvim
 
 ## To install:
 
