@@ -21,6 +21,7 @@ PKGS=(
   'kitty'
   'fish'
   'feh'
+  'awesome'
 
 	# Gpu drivers
   'xf86-video-amdgpu'
@@ -126,6 +127,7 @@ PKGS=(
   'ksuperkey'
   'mictray'
   'syncthing'
+  'khal'
   'keepassxc-git'
 )
 
