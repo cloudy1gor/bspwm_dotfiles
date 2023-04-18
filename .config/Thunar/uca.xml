@@ -17,7 +17,7 @@
 	<name>Set wallpaper</name>
 	<submenu></submenu>
 	<unique-id>1526628754365261-1</unique-id>
-	<command>feh --bg-fill %f</command>
+	<command>feh --no-fehbg --bg-fill %f</command>
 	<description></description>
 	<range></range>
 	<patterns>*</patterns>

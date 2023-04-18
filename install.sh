@@ -99,7 +99,6 @@ PKGS=(
   'python'
   'yarn'
   'php'
-  'docker'
 
 	# VM
   'qemu-full'
@@ -116,7 +115,7 @@ PKGS=(
   # Other
 	'wedder'
 	'espanso-bin'
-  'picom-jonaburg-git'
+  'picom-ftlabs-git'
   'redshift-minimal'
 	'figma-linux-bin'
   'obsidian'
