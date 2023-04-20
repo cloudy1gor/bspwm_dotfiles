@@ -12,6 +12,7 @@ makepkg -si
 yay --editmenu --nodiffmenu --save
 
 PKGS=(
+  # WM & base packages
 	'git'
   'curl'
   'wget'
@@ -111,6 +112,12 @@ PKGS=(
   'ebtables'
   'iptables'
   'libguestfs'
+
+  # Gaming
+  'wine'
+  'wine-mono'
+  'wine-gecko'
+  'portproton'
 
   # Other
 	'wedder'
