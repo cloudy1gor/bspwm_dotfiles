@@ -60,9 +60,17 @@ bscp node -f {west,south,north,east,next,prev}
 bspc rule -a plank layer=above manage=on border=off focus=off
 bspc rule -a cairo-dock layer=above manage=on border=off focus=off
 bspc rule -a copyq state=floating center=true focus=on
-bspc rule -a MEGAsync desktop='^9' state=floating center=true focus=on
 
-declare -a code=(qutebrowser)
+declare -a settings=(MEGAsync Lxappearance Lxtask Lxrandr Arandr \
+Nm-connection-editor Pavucontrol:pavucontrol Blueberry.py)
+for i in ${settings[@]}; do
+bspc rule -a $i desktop='^1' state=floating center=true follow=on focus=on; done
+
+declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
+for i in ${code[@]}; do
+bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
+
+declare -a code=(qutebrowser chromium Google-chrome)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^2' follow=on focus=on; done
 
@@ -70,7 +78,7 @@ declare -a code=(Thunar Koreader)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^3' follow=on focus=on; done
 
-declare -a code=(LibreWolf KeePassXC tor-browser qBittorrent)
+declare -a code=(LibreWolf KeePassXC VeraCrypt tor-browser qBittorrent)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^4' follow=on focus=on; done
 
@@ -94,22 +102,13 @@ declare -a code=(Code code-oss jetbrains-phpstorm)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^8' follow=on focus=on; done
 
-declare -a code=(Virt-manager figma-linux Kuro)
+declare -a code=(Virt-manager Upscayl figma-linux Gimp-2.10 Kuro)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^9' state=floating center=true rectangle=1476x925+0+0 focus=on follow=on; done
 
 # declare -a code=('*:ncmpcpp', '*:cmus', '*:emusikcube', '*:cava')
 # for i in ${code[@]}; do
 # bspc rule -a $i desktop='^10' follow=off focus=off; done
-
-declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
-for i in ${code[@]}; do
-bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
-
-declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
-Nm-connection-editor Pavucontrol:pavucontrol Blueberry.py)
-for i in ${settings[@]}; do
-bspc rule -a $i desktop='^1' state=floating center=true follow=on focus=on; done
 
 # Bar
 ~/.config/polybar/launch.sh &

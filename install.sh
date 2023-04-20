@@ -12,25 +12,45 @@ makepkg -si
 yay --editmenu --nodiffmenu --save
 
 PKGS=(
+	# Gpu drivers
+  'xf86-video-amdgpu'
+
   # WM & base packages
 	'git'
   'curl'
   'wget'
   'wmname'
   'yad'
+  'alsa-utils'
+  'bluez'
+  'bluez-utils'
+  'pulseaudio-bluetooth'
+  'blueberry'
+  'brightnessctl'
   'micro'
   'kitty'
   'fish'
   'feh'
+  'autorandr'
   'awesome'
+  'bspwm'
+  'sxhkd'
+  'polybar'
+  'rofi'
+  'picom-ftlabs-git'
+  'redshift-minimal'
+  'wedder'
+  'ksuperkey'
+  'copyq'
+  'xsettingsd'
+  'lxappearance'
 
-	# Gpu drivers
-  'xf86-video-amdgpu'
-
-	# Fonts
+	# Fonts, icons, cursors
   'ttf-jetbrains-mono-nerd'
   'ttf-iosevka-nerd'
   'ttf-ms-win11-auto'
+  'papirus-icon-theme'
+  'capitaine-cursors'
 
   # File manager & utils
   'thunar'
@@ -61,34 +81,12 @@ PKGS=(
 	# Browsers
  	'librewolf-bin'
   'google-chrome'
-  
-  'lxappearance'
-  'xsettingsd'
-  'alsa-utils'
-  'bluez'
-  'bluez-utils'
-  'pulseaudio-bluetooth'
-  'blueberry'
-  'brightnessctl'
-  'timeshift'
-  'papirus-icon-theme'
-  'neofetch'
-  'acpi'
-  'capitaine-cursors'
+
+  # Social
   'telegram-desktop'
   'discord'
-  'brightnesctl'
-  'feh'
-  'capitaine-cursors'
-  'telegram-desktop'
-  'copyq'
-  'ncdu'
-  'flameshot'
-  'obs-studio'
-  'qbittorrent'
-  'autorandr'
-  'btop'
-  'htop'
+  'skypeforlinux-stable-bin'
+  'zoom'
 
 	# Dev apps
   'neovim'
@@ -97,9 +95,9 @@ PKGS=(
   'jre-openjdk'
   'nodejs-lts-fermium'
   'npm'
-  'python'
   'yarn'
   'php'
+  'python'
 
 	# VM
   'qemu-full'
@@ -114,26 +112,30 @@ PKGS=(
   'libguestfs'
 
   # Gaming
-  'wine'
-  'wine-mono'
-  'wine-gecko'
+  # 'wine'
+  # 'wine-mono'
+  # 'wine-gecko'
   'portproton'
 
   # Other
-	'wedder'
+  'timeshift'
+  'neofetch'
+  'acpi'
+  'ncdu'
+  'flameshot'
+  'obs-studio'
+  'qbittorrent'
+  'btop'
+  'htop'
 	'espanso-bin'
-  'picom-ftlabs-git'
-  'redshift-minimal'
 	'figma-linux-bin'
   'obsidian'
   'koreader-bin'
-  'zoom'
-  'skypeforlinux-stable-bin'
   'peaclock'
-  'ksuperkey'
   'mictray'
   'syncthing'
   'khal'
+  'veracrypt'
   'keepassxc-git'
 )
 
