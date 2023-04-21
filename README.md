@@ -16,12 +16,11 @@
 
 ## To install packages:
 
-### cd ~/Downloads
+### cd ~/Documents
 ### git clone https://github.com/cloudy1gor/bspwm_dotfiles
 ### cd bspwm_dotfiles
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=sh+install_packages.sh)](https://git.io/typing-svg)
-
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=sh+coppy_configs.sh)](https://git.io/typing-svg)
 
 ![](/screen.png)</br>
