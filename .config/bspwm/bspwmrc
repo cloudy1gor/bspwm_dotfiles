@@ -138,7 +138,8 @@ ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
 # Wallpaper
-feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
+# feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
+feh --bg-scale --no-fehbg ~/.config/bspwm/1.jpg
 
 # Yellow colors
 #while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
@@ -152,7 +153,7 @@ xsetroot -cursor_name left_ptr &
 xbanish &
 
 # Auto-hide the mouse cursor when inactive
-unclutter &
+unclutter -idle 2 &
 
 # Keyboard
 setxkbmap -option grp:win_space_toggle us,ru &

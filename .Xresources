@@ -7,15 +7,15 @@ Xft.hintstyle:   hintfull
 Xft.lcdfilter:   lcddefault
 
 ! Comand for search font:: fc-list | grep "JetBrains Mono"
-*.font: xft:JetBrainsMonoNL Nerd Font Mono:style=Medium,Regular:size=12
+*.font: xft:JetBrainsMono Nerd Font:style=Medium,Regular:size=12
 
-Xcursor.size: 24
 Xcursor.theme: capitaine-cursors
+Xcursor.size: 24
 
+! Settings for Urxvt terminal
 URxvt.scrollBar: off
 URxvt.internalBorder:22Rxvt.scrollBar: off
 URxvt.intensityStyles: false
-
 
 ! Extensions
 URxvt.perl-ext-common:      default,clipboard,keyboard-select,url-select,resize-font,clipboard,url-select,keyboard-select,tabbedex,selection-to-clipboard,config-reload,font-size
@@ -48,10 +48,10 @@ URxvt.keysym.C-plus:  resize-font:bigger
 URxvt.resize-font.step: 1
 
 ! JetBrainsMono
-URxvt.font: xft:JetBrainsMonoNL Nerd Font Mono:style=Medium,Regular:size=12
-URxvt.boldFont: xft:JetBrainsMonoNL Nerd Font Mono:style=Bold:size=14
-URxvt.italicFont: xft:JetBrainsMonoNL Nerd Font Mono:style=Italic:size=14
-URxvt.boldItalicFont: xft:JetBrainsMonoNL Nerd Font Mono:style=Bold Italic:size=14
+URxvt.font: xft:JetBrainsMono Nerd Font Mono:style=Medium,Regular:size=12
+URxvt.boldFont: xft:JetBrainsMono Nerd Font Mono:style=Bold:size=14
+URxvt.italicFont: xft:JetBrainsMono Nerd Font Mono:style=Italic:size=14
+URxvt.boldItalicFont: xft:JetBrainsMono Nerd Font Mono:style=Bold Italic:size=14
 URxvt.letterSpace: -1
 
 ! Catppuccin Latte theme

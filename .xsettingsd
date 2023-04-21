@@ -1,4 +1,4 @@
-Net/ThemeName "WhiteSur Light"
-Net/IconThemeName "Papirus"
 Gtk/CursorThemeName "capitaine-cursors"
 Gtk/CursorThemeSize "24"
+Net/IconThemeName "Papirus"
+Net/ThemeName "WhiteSur Light"

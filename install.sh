@@ -17,6 +17,8 @@ PKGS=(
 
   # WM & base packages
 	'git'
+  'xorg-xinput'
+  'xorg-xsetroot'
   'curl'
   'wget'
   'wmname'
@@ -41,21 +43,26 @@ PKGS=(
   'redshift-minimal'
   'wedder'
   'ksuperkey'
+  'xbanish'
+  'unclutter'
   'copyq'
   'xsettingsd'
-  'lxappearance'
 
-	# Fonts, icons, cursors
+	# Fonts, icons, cursors, themes
+  'ttf-jetbrains-mono'
   'ttf-jetbrains-mono-nerd'
   'ttf-iosevka-nerd'
   'ttf-ms-win11-auto'
   'papirus-icon-theme'
+  'papirus-folders'
   'capitaine-cursors'
+  'whitesur-gtk-theme'
 
   # File manager & utils
   'thunar'
   'thunar-archive-plugin'
   'thunar-megasync-bin'
+  'xarchiver'
   'gvfs'
   'gvfs-mtp'
   'tumbler'
@@ -118,6 +125,7 @@ PKGS=(
   'portproton'
 
   # Other
+  'fzf'
   'timeshift'
   'neofetch'
   'acpi'
@@ -144,6 +152,7 @@ for PKG in "${PKGS[@]}"; do
   yay -S "$PKG" --noconfirm --needed
 done
 
+papirus-folders -C bluegrey
 sudo systemctl enable --now bluetooth
 sudo systemctl enable --now libvirtd.service
 sudo usermod -a -G libvirt $(whoami)
