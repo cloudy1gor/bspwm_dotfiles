@@ -99,3 +99,6 @@ end
 if status --is-interactive
    neofetch
 end
+
+export TERM=xterm-kitty
+

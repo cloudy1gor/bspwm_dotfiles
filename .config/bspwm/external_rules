@@ -30,3 +30,4 @@ fi
 if [ "$class" = "TelegramDesktop" ] && [ "$title" = "Media viewer" ]; then
     echo "state=fullscreen"
 fi
+

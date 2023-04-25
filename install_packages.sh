@@ -14,6 +14,11 @@ yay --editmenu --nodiffmenu --save
 PKGS=(
 	# Gpu drivers
   'xf86-video-amdgpu'
+  'lib32-mesa'
+  'vulkan-radeon'
+  'lib32-vulkan-radeon'
+  'vulkan-icd-loader'
+  'lib32-vulkan-icd-loader'
 
   # WM & base packages
 	'git'
@@ -29,16 +34,17 @@ PKGS=(
   'pulseaudio-bluetooth'
   'blueberry'
   'brightnessctl'
+  'pavucontrol'
   'micro'
   'kitty'
   'fish'
   'feh'
   'autorandr'
-  'awesome'
   'bspwm'
   'sxhkd'
   'polybar'
   'rofi'
+  'dunst'
   'picom-ftlabs-git'
   'redshift-minimal'
   'wedder'
@@ -47,6 +53,7 @@ PKGS=(
   'unclutter'
   'copyq'
   'xsettingsd'
+  'betterlockscreen'
 
 	# Fonts, icons, cursors, themes
   'ttf-jetbrains-mono'
@@ -124,6 +131,12 @@ PKGS=(
   # 'wine-gecko'
   'portproton'
 
+  # Graphics Utilities
+  'gimp'
+  'kdenlive'
+  'handbrake'
+  'upscayl-bin'
+
   # Other
   'fzf'
   'timeshift'
@@ -133,8 +146,7 @@ PKGS=(
   'flameshot'
   'obs-studio'
   'qbittorrent'
-  'btop'
-  'htop'
+  'gotop-bin'
 	'espanso-bin'
 	'figma-linux-bin'
   'obsidian'
@@ -144,6 +156,7 @@ PKGS=(
   'syncthing'
   'khal'
   'veracrypt'
+  'libreoffice-fresh'
   'keepassxc-git'
 )
 

@@ -58,8 +58,8 @@ bspc rule -r \*:\*
 bspc rule -a "*:floating" state=floating rectangle=1200x800+720+240
 bscp node -f {west,south,north,east,next,prev}
 bspc rule -a plank layer=above manage=on border=off focus=off
-bspc rule -a cairo-dock layer=above manage=on border=off focus=off
 bspc rule -a copyq state=floating center=true focus=on
+bspc rule -a 'Soffice:soffice' desktop='^6' state=tiled focus=on follow=on
 
 declare -a settings=(MEGAsync Lxappearance Lxtask Lxrandr Arandr \
 Nm-connection-editor Pavucontrol:pavucontrol Blueberry.py)
@@ -102,13 +102,13 @@ declare -a code=(Code code-oss jetbrains-phpstorm)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^8' follow=on focus=on; done
 
-declare -a code=(Virt-manager Upscayl figma-linux Gimp-2.10 Kuro)
+declare -a code=(Virt-manager Upscayl figma-linux kdenlive Gimp-2.10 Fr.handbrake.ghb Yad_new Kuro)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^9' state=floating center=true rectangle=1476x925+0+0 focus=on follow=on; done
 
-# declare -a code=('*:ncmpcpp', '*:cmus', '*:emusikcube', '*:cava')
-# for i in ${code[@]}; do
-# bspc rule -a $i desktop='^10' follow=off focus=off; done
+declare -a code=()
+for i in ${code[@]}; do
+bspc rule -a $i desktop='^10' state=floating center=true rectangle=1476x925+0+0 follow=off focus=off; done
 
 # Bar
 ~/.config/polybar/launch.sh &
@@ -138,8 +138,7 @@ ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
 # Wallpaper
-# feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
-feh --bg-scale --no-fehbg ~/.config/bspwm/1.jpg
+feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
 
 # Yellow colors
 #while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
