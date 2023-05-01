@@ -2,8 +2,8 @@
 
 BAR_HEIGHT=34  # polybar height
 BORDER_SIZE=1  # border size from your wm settings
-YAD_WIDTH=1116  # 222 is minimum possible value
-YAD_HEIGHT=193 # 193 is minimum possible value
+YAD_WIDTH=780  # 222 is minimum possible value
+YAD_HEIGHT=330 # 193 is minimum possible value
 DATE="$("|%a%|H:%M%")"
 
 eval $(xwininfo -id $(xdotool getactivewindow) |

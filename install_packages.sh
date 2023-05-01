@@ -78,11 +78,12 @@ PKGS=(
   'unrar'
   'unzip'
   'zip'
-  '7-zip-full'
+  'p7zip-gui'
   'ranger'
   'ueberzug'
   'ntfs-3g'
   'gksu'
+  'mediainfo-gui'
 
 	# Media
   'mpv'
@@ -134,6 +135,7 @@ PKGS=(
   # Graphics Utilities
   'gimp'
   'kdenlive'
+  'shotcut'
   'handbrake'
   'upscayl-bin'
 
