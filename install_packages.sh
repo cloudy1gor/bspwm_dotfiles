@@ -141,6 +141,7 @@ PKGS=(
 
   # Other
   'fzf'
+  'scrcpy'
   'timeshift'
   'neofetch'
   'acpi'
