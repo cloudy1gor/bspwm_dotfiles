@@ -56,7 +56,6 @@ PKGS=(
   'betterlockscreen'
 
 	# Fonts, icons, cursors, themes
-  'ttf-jetbrains-mono'
   'ttf-jetbrains-mono-nerd'
   'ttf-iosevka-nerd'
   'ttf-ms-win11-auto'
@@ -68,7 +67,6 @@ PKGS=(
   # File manager & utils
   'thunar'
   'thunar-archive-plugin'
-  'thunar-megasync-bin'
   'xarchiver'
   'gvfs'
   'gvfs-mtp'
@@ -112,7 +110,7 @@ PKGS=(
   'npm'
   'yarn'
   'php'
-  'python'
+  'composer'
 
 	# VM
   'qemu-full'
@@ -160,7 +158,8 @@ PKGS=(
   'khal'
   'veracrypt'
   'libreoffice-fresh'
-  'keepassxc-git'
+  'ventoy-bin'
+  'keepassxc'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -182,7 +181,7 @@ fisher install PatrickF1/fzf.fish
 fisher install IlanCosman/tide@v5
 fisher install jethrokuan/z
 
-sudo npm install --global gulp
+sudo npm install --global gulp webpack
 
 # Give execution permission for all scripts in the directory
 chmod -R +x ~/.config
@@ -193,4 +192,3 @@ tide configure
 
 sudo yay -Yc
 
-# cp -r .config .local ~/

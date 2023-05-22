@@ -127,16 +127,16 @@ function pomo_clock {
         left=$(( WORK_TIME*60 - running ))
         if [[ $left -lt 0 ]]; then
             left=$(( left + BREAK_TIME*60 ))
-            prefix="ﭣ"
+            prefix=""
         else
-            prefix=""
+            prefix=""
         fi
-        pomo_ispaused && prefix=
+        pomo_ispaused && prefix=
         min=$(( left / 60 ))
         sec=$(( left - 60*min ))
         printf " %2s %02d:%02d\n" $prefix $min $sec
     else
-        printf " 奈 25:00\n"
+        printf "  25:00\n"
     fi
 }
 

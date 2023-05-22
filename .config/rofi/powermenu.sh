@@ -6,10 +6,10 @@ uptime=$(uptime -p | sed -e 's/up //g')
 
 # Options
 shutdown=""
-reboot=""
+reboot=""
 lock=""
 suspend=""
-logout="<"
+logout="󰍃"
 
 # Variable passed to rofi
 options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
