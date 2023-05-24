@@ -24,7 +24,6 @@ return {
       "    ██   ████   ████   ██ ██      ██",
   },
 
-
   icons = {
     ActiveLSP = "",
     ActiveTS = "",

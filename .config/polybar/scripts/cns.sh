@@ -5,9 +5,9 @@ function capslock() {
   caps=$(xset -q | grep Caps | awk '{ print $4 }')
 
   if [ $caps == 'off' ]; then
-    echo "%{T1}%{T-}"
+    echo "%{T2}%{T-}"
   else
-    echo "%{T1}בּ%{T-}"
+    echo "%{T2}󰪛%{T-}"
   fi
 
 }

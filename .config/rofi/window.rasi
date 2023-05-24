@@ -1,5 +1,5 @@
 configuration {
-    font:                           "JetBrains Mono 12";
+    font:                           "JetBrainsMono Nerd Font 12";
     show-icons:                     false;
     display-window: 				"Windows :";
     window-format: 					"{w}  ·  {c}  ·  {t}";
@@ -37,7 +37,7 @@ prompt {
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							"";
+	str: 							" ";
     border-radius:                  0px;
     text-color:                     #ececec;
     padding:    					0px 10px 0px 10px;

@@ -1,9 +1,9 @@
 configuration {
-	font:														"JetBrains Mono 12";
+	font:														"JetBrainsMono Nerd Font 12";
 	terminal: 											"~/.config/rofi/terminal.sh";
 	show-icons:                     true;
 	icon-theme: 										"Papirus";
-	display-drun: 									"";
+	display-drun: 									"󱓇 ";
 	drun-display-format:            "{name}";	
 	disable-history:                false;
 	sidebar-mode: 									false;
