@@ -87,13 +87,11 @@ PKGS=(
   'mpv'
   'mpd'
   'ncmpcpp'
-  'mpc'
   'cava'
-  'musikcube-bin'
 
 	# Browsers
  	'librewolf-bin'
-  'google-chrome'
+  'ungoogled-chromium-xdg-bin'
 
   # Social
   'telegram-desktop'
@@ -155,7 +153,6 @@ PKGS=(
   'peaclock'
   'mictray'
   'syncthing'
-  'khal'
   'veracrypt'
   'libreoffice-fresh'
   'ventoy-bin'

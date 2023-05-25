@@ -70,7 +70,7 @@ declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
 
-declare -a code=(qutebrowser vivaldi ungoogled-chromium chromium Google-chrome)
+declare -a code=(LibreWolf Qutebrowser Vivaldi Chromium Google-chrome)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^2' follow=on focus=on; done
 
@@ -78,13 +78,13 @@ declare -a code=(Thunar Koreader)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^3' follow=on focus=on; done
 
-declare -a code=(LibreWolf KeePassXC VeraCrypt tor-browser qBittorrent)
+declare -a code=(KeePassXC VeraCrypt tor-browser qBittorrent)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^4' follow=on focus=on; done
 
 declare -a code=(TelegramDesktop)
 for i in ${code[@]}; do
-bspc rule -a $i desktop='^5' state=floating follow=off focus=off; done
+bspc rule -a $i desktop='^5' state=tiled follow=off focus=off; done
 
 declare -a code=(Zoom Skype discord)
 for i in ${code[@]}; do

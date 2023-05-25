@@ -252,10 +252,10 @@ alt + shift + v
   code
 
 alt + shift + w
-  google-chrome-stable
+  chromium
 
 alt + shift + m
-	google-chrome-stable https://music.youtube.com
+	chromium https://music.youtube.com
 
 alt + shift + y
-	google-chrome-stable https://youtube.com
+	chromium https://youtube.com
