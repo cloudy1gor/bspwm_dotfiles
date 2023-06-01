@@ -58,7 +58,7 @@ launch_bar() {
         if [[ $(xrandr -q | grep " connected" | cut -d ' ' -f1) ]]; then
             polybar -q top -c ~/.config/polybar/config.ini &
             polybar -q bottom -c ~/.config/polybar/config.ini &
-            polybar -q top_external -c ~/.config/polybar/config.ini &
+            # polybar -q top_external -c ~/.config/polybar/config.ini &
         else
             polybar -q top -c ~/.config/polybar/config.ini &
             polybar -q bottom -c ~/.config/polybar/config.ini &
