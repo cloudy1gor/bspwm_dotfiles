@@ -70,7 +70,7 @@ declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
 
-declare -a code=(LibreWolf Qutebrowser Vivaldi Chromium Google-chrome)
+declare -a code=(LibreWolf Qutebrowser Vivaldi Chromium Google-chrome Brave-browser)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^2' follow=on focus=on; done
 
