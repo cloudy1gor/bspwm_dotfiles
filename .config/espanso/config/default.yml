@@ -41,38 +41,4 @@ auto_restart: true
 
 # Letters
 
-matches:
-  - trigger: ":ы"
-    replace: "і"
-  - trigger: ":Ы"
-    replace: "І"
-  
-  - trigger: ":і"
-    replace: "ы"
-  - trigger: ":І"
-    replace: "Ы"
 
-  - trigger: ":е"
-    replace: "ё"
-  - trigger: ":Е"
-    replace: "Ё"
-
-  - trigger: ":э"
-    replace: "є"
-  - trigger: ":Э"
-    replace: "Є"
-  
-  - trigger: ":ъ"
-    replace: "ї"
-  - trigger: ":Ъ"
-    replace: "Ї"
-  
-  - trigger: ":ї"
-    replace: "ъ"
-  - trigger: ":Ї"
-    replace: "Ъ"
-
-  - trigger: ":г"
-    replace: "ґ"
-  - trigger: ":Г"
-    replace: "Ґ"
