@@ -73,6 +73,7 @@ PKGS=(
   'tumbler'
   'ffmpegthumbnailer'
   'tumbler-folder-thumbnailer'
+  'webp-pixbuf-loader'
   'unrar'
   'unzip'
   'zip'
@@ -157,6 +158,7 @@ PKGS=(
   'veracrypt'
   'libreoffice-fresh'
   'ventoy-bin'
+  'stacer-bin'
   'keepassxc'
 )
 
