@@ -54,6 +54,9 @@ PKGS=(
   'copyq'
   'xsettingsd'
   'betterlockscreen'
+  'tlp'
+  'tlp-rdw'
+  'powertop'
 
 	# Fonts, icons, cursors, themes
   'ttf-jetbrains-mono-nerd'
@@ -153,7 +156,6 @@ PKGS=(
   'obsidian'
   'koreader-bin'
   'peaclock'
-  'mictray'
   'syncthing'
   'veracrypt'
   'libreoffice-fresh'
@@ -168,6 +170,8 @@ for PKG in "${PKGS[@]}"; do
 done
 
 papirus-folders -C bluegrey
+sudo systemctl enable tlp.service
+sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
 sudo systemctl enable --now bluetooth
 sudo systemctl enable --now libvirtd.service
 sudo usermod -a -G libvirt $(whoami)
