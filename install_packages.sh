@@ -192,6 +192,11 @@ chmod -R +x ~/.config
 
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
+# Tool for optimizing battery life
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq && sudo ./auto-cpufreq-installer
+sudo auto-cpufreq --install
+
 tide configure
 
 sudo yay -Yc
