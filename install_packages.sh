@@ -2,7 +2,7 @@
 
 clear
 sudo pacman -Syyu
-sudo pacman -S archlinux-keyring
+sudo pacman -S archlinux-keyring pacman-contrib
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
 git clone https://aur.archlinux.org/yay.git
@@ -13,6 +13,7 @@ yay --editmenu --nodiffmenu --save
 
 PKGS=(
 	# Gpu drivers
+	'amd-ucode'
   'xf86-video-amdgpu'
   'lib32-mesa'
   'vulkan-radeon'
@@ -57,6 +58,8 @@ PKGS=(
   'tlp'
   'tlp-rdw'
   'powertop'
+  'ufw'
+  'iptables'
 
 	# Fonts, icons, cursors, themes
   'ttf-jetbrains-mono-nerd'
@@ -85,7 +88,6 @@ PKGS=(
   'ueberzug'
   'ntfs-3g'
   'gksu'
-  'mediainfo-gui'
 
 	# Media
   'mpv'
@@ -170,6 +172,9 @@ for PKG in "${PKGS[@]}"; do
 done
 
 papirus-folders -C bluegrey
+sudo ufw enable
+sudo systemctl enable ufw.service
+sudo systemctl enable paccache.timer
 sudo systemctl enable tlp.service
 sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
 sudo systemctl enable --now bluetooth
