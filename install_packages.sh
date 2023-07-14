@@ -174,6 +174,7 @@ done
 papirus-folders -C bluegrey
 sudo ufw enable
 sudo systemctl enable ufw.service
+sudo ufw allow ssh
 sudo systemctl enable paccache.timer
 sudo systemctl enable tlp.service
 sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket

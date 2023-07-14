@@ -70,7 +70,7 @@ declare -a code=(GParted Nitrogen Variety Timeshift-gtk)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^1' state=floating center=true rectangle=1376x725+0+0 focus=on follow=on; done
 
-declare -a code=(LibreWolf Qutebrowser Vivaldi Chromium Google-chrome Brave-browser)
+declare -a code=(LibreWolf Qutebrowser Vivaldi-stable Chromium Google-chrome Brave-browser)
 for i in ${code[@]}; do
 bspc rule -a $i desktop='^2' follow=on focus=on; done
 
@@ -137,39 +137,10 @@ picom -CGb --config ~/.config/picom.conf &
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
-# Wallpaper
-feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
-
 # Yellow colors
 #while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
 #redshift -c ~/.config/redshift/redshift.conf
 #redshift -l 49:36 -t 6600:3800 -m randr &
-
-# Cursor
-xsetroot -cursor_name left_ptr &
-
-# Hide mouse when typing
-xbanish &
-
-# Auto-hide the mouse cursor when inactive
-unclutter -idle 2 &
-
-# Keyboard
-setxkbmap -option grp:win_space_toggle us,ru &
-
-# Touchpad
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Tapping Enabled" 1
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Tapping Drag Enabled" 1
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput libinput Scroll Method Enabled" 1, 0, 0
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Disable While Typing Enabled" 1
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Accel Speed" 0.6
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Scrolling Pixel Distance" 20
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Accel Profile Enabled" 1
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Natural Scrolling Enabled" 1
-xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enabled" 1
-
-# Java Applications
-wmname LG3D
 
 # Include external_rules
 bspc config external_rules_command ~/.config/bspwm/external_rules

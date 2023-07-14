@@ -1,0 +1,40 @@
+# Hide mouse when typing
+xbanish &
+
+# Auto-hide the mouse cursor when inactive
+unclutter -idle 2 &
+
+# Fix cursor shape
+xsetroot -cursor_name left_ptr &
+
+# Wallpaper
+feh --bg-scale --randomize --no-fehbg ~/Pictures/Wallpapers/*
+
+# Keyboard
+setxkbmap -option grp:win_space_toggle us,ru &
+
+# Keyboard repeat
+xset r rate 300 50 &
+
+# Touchpad
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Tapping Enabled" 1
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Tapping Drag Enabled" 1
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput libinput Scroll Method Enabled" 1, 0, 0
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Disable While Typing Enabled" 1
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Accel Speed" 0.6
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Scrolling Pixel Distance" 20
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Accel Profile Enabled" 1
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Natural Scrolling Enabled" 1
+xinput set-prop "ELAN0504:01 04F3:312B Touchpad" "libinput Middle Emulation Enabled" 1
+
+# Set the scale
+# export WINIT_X11_SCALE_FACTOR=1
+
+# Set default terminal
+export TERMINAL="/usr/bin/kitty"
+
+# Set the GTK icon theme
+export GTK_THEME="Papirus"
+
+# Set the GTK theme
+export GTK3_THEME="WhiteSur-Light"
