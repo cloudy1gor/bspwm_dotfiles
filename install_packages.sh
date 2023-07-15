@@ -163,7 +163,6 @@ PKGS=(
   'neofetch'
   'acpi'
   'ncdu'
-  'calibre-git'
   'flameshot'
   'obs-studio'
   'qbittorrent'
@@ -178,6 +177,7 @@ PKGS=(
   'libreoffice-fresh'
   'ventoy-bin'
   'stacer-bin'
+  'bleachbit'
   'keepassxc'
 )
 
