@@ -98,8 +98,8 @@ PKGS=(
 
 	# Browsers
  	'librewolf-bin'
-  'ungoogled-chromium-xdg-bin'
-  'vivaldi'
+  'ungoogled-chromium-bin'
+  'brave-bin'
 
   # Social
   'telegram-desktop'
