@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set the source and destination directories
-src_dir="$HOME/Documents/bspwm_dotfiles/.config"
-dst_dir="$HOME/.config"
+src_dir="~/Documents/bspwm_dotfiles/.config"
+dst_dir="~/.config"
 
 # Loop through all the directories in the source directory
 for dir in "$src_dir"/*/

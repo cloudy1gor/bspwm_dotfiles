@@ -49,7 +49,7 @@ PKGS=(
   'picom-ftlabs-git'
   'redshift-minimal'
   'safeeyes'
-  'wedder'
+  'wedder-git'
   'ksuperkey'
   'xbanish'
   'unclutter'
@@ -178,7 +178,8 @@ PKGS=(
   'ventoy-bin'
   'stacer-bin'
   'bleachbit'
-  'keepassxc'
+  'megasync-git'
+  'keepassxc-git'
 )
 
 for PKG in "${PKGS[@]}"; do
