@@ -1,7 +1,8 @@
 <h1 align="center">BSPWM dotfiles </a>
 <img src="https://github.com/blackcater/blackcater/raw/main/images/banner.gif" height="32" width="32"/></h1>
 <h3 align="center">My configuration files include: bspwm, polybar, rofi, dnust, eww, kitty, fish, ranger, mpv, redfish, cmus, bpytop... Of course for Arch...</h3></br>
-![](./screen.png)
+
+![ScreenShot](/screen.png)
 
 ## Basic packages.  
 + **WM**: [BSPWM](https://github.com/cloudy1gor/bspwm_dotfiles/tree/main/.config/bspwm)
