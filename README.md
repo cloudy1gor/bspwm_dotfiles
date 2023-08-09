@@ -1,7 +1,7 @@
 <h1 align="center">BSPWM dotfiles </a>
 <img src="https://github.com/blackcater/blackcater/raw/main/images/banner.gif" height="32" width="32"/></h1>
 <h3 align="center">My configuration files include: bspwm, polybar, rofi, dnust, eww, kitty, fish, ranger, mpv, redfish, cmus, bpytop... Of course for Arch...</h3></br>
-<!-- [screen.png](https://postimg.cc/fV96kWNg) -->
+[screen.png](https://postimg.cc/fV96kWNg)
 
 ## Basic packages.  
 + **WM**: [BSPWM](https://github.com/cloudy1gor/bspwm_dotfiles/tree/main/.config/bspwm)
@@ -22,8 +22,7 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=sh+install_packages.sh)](https://git.io/typing-svg)
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=sh+coppy_configs.sh)](https://git.io/typing-svg)
-
-O</br>
+</br>
 
 <h2 align="center">Thanks to: </h2>
 
